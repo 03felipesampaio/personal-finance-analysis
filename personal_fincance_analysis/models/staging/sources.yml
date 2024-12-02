@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: bronze # this is the source_name
+    schema: expenses_tracker_bronze
+
+    tables:
+      - name: bills__inter
+      - name: bills__nubank
+      - name: statements__nubank
+      - name: statements__inter
