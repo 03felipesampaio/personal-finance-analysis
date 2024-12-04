@@ -40,3 +40,10 @@ models:
       +enabled: true
       +materialized: table
       +schema: int_personal_finance
+
+seeds:
+  personal_fincance_analysis:
+    +quote_columns: false
+    +schema: expenses-tracker-bronze
+    int_bills_nubank_regex_mapping:
+      +materialized: seed
