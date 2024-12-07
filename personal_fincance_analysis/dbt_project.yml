@@ -44,6 +44,6 @@ models:
 seeds:
   personal_fincance_analysis:
     +quote_columns: false
-    +schema: expenses-tracker-bronze
-    int_bills_nubank_regex_mapping:
+    +schema: expenses_tracker_bronze
+    bills_nubank_regex_mapping:
       +materialized: seed
