@@ -16,6 +16,18 @@ bills_with_transaction_type as (
             when transaction_description like 'Pagamento em %' then 'Bill payment'
             when transaction_description = 'IOF de atraso' then 'Late payment fee'
             -- There is also r'IOF de \w+' for international purchases
+            -- Estorno
+            -- Credito
+            -- Antecipada
+            -- Desconto Antecipação
+            -- Parcelamento de compra
+            -- Crédito de parcelamento de compra
+            -- Saldo em atraso
+            -- Multa de atraso
+            -- Crédito de atra
+            -- Juros de atraso
+            -- Htm*Portal Eam (Acho que é aluguel)
+            -- Tem muita informação no Ifood que dá pra extrair
             -- when regexp_contains(transaction_description, r' - \d+/\d+') then 'Credit card parcell'
             else 'Credit card' end
         as transaction_type,
