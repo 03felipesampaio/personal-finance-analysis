@@ -9,7 +9,6 @@ sources:
       - name: bills__nubank
       - name: statements__nubank
       - name: statements__inter
-  - name: dbt_bronze
-    schema: dbt_expenses_tracker_bronze
-    tables:
       - name: bills_nubank_regex_mapping
+      - name: places
+      - name: transaction_types

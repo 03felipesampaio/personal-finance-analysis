@@ -1,0 +1,36 @@
+place_id,place,is_online,category
+1,Aliexpress,Online,E-commerce
+2,Ifood,Online,Food Delivery
+3,Uber,Online,Transportation
+4,Nubank,Online,Finance
+5,Amazon,Online,E-commerce
+6,Amazon Prime,Online,Streaming
+7,Azul,Online,Airline
+8,Escola de Artes Manuais,Online,Education
+9,Shopee,Online,E-commerce
+10,Youtube,Online,Streaming
+11,HBO Max,Online,Streaming
+12,Jau Serve Loja,Physical,Supermarket
+13,Gol,Online,Airline
+14,Hering,Physical,Clothing
+15,Latam,Online,Airline
+16,Extra,Physical,Supermarket
+17,Google Apps,Online,Technology
+18,99Taxis,Online,Transportation
+19,Kalunga,Physical,Office Supplies
+20,Sony Plastaytion,Online,Entertainment
+21,Long Neck,Physical,Restaurant
+22,Banana Brasil Eventos,Physical,Events
+23,Nike,Physical,Sportswear
+24,Clickbus,Online,Transportation
+25,Centauro,Physical,Sportswear
+26,Ingresso.com,Online,Entertainment
+27,Bobs,Physical,Restaurant
+28,Empresa Cruz,Physical,Transportation
+29,Insider,Online,Clothing
+30,Hotels.com,Online,Travel
+31,Lancheria Lanche Pao,Physical,Restaurant
+32,123 Milhas,Online,Travel
+33,Pizzaria Lucchiari,Physical,Restaurant
+34,Gauchao Lanches,Physical,Restaurant
+35,Carrefour,Physical,Supermarket

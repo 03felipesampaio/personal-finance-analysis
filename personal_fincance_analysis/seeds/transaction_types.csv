@@ -1,0 +1,15 @@
+type_id,type_description,type_description_pt
+1,Credit Card,Cartão de Crédito
+2,Debit Card,Cartão de Débito
+3,Transfer,Transferência
+4,Withdrawal,Saque
+5,Bill Payment,Pagamento de Conta
+6,Wire Transfer,Transferência Bancária
+7,Loan Payment,Pagamento de Empréstimo
+8,Refund,Estorno
+9,Deposit,Depósito
+10,Fee,Taxa
+11,Interest,Juros
+12,Pix sent,Pix enviado
+13,Pix received,Pix recebido
+14,Payment slip,Boleto
