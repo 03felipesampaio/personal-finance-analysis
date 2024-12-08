@@ -35,11 +35,11 @@ models:
     staging:
       # +enabled: true
       +materialized: view
-      +schema: stg_personal_finance
-    intermediate:
+      +schema: expenses_tracker_stg
+    silver:
       +enabled: true
       +materialized: table
-      +schema: int_personal_finance
+      +schema: expenses_tracker_silver
 
 seeds:
   personal_fincance_analysis:
