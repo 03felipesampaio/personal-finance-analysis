@@ -30,7 +30,7 @@ category_id,category,category_pt,upper_category,upper_category_pt
 28,Hobbies,Hobbies,Entertainment & Recreation,Entretenimento e Lazer
 29,Travel & Vacations,Viagens e Férias,Entertainment & Recreation,Entretenimento e Lazer
 30,Haircuts & Beauty,Cortes de Cabelo e Beleza,Personal Care,Cuidados Pessoais
-31,Clothing & Accessories,Roupas e Acessórios,Shopping,Compras
+31,Clothing,Roupas,Shopping,Compras
 32,Laundry & Dry Cleaning,Lavanderia e Lavagem a Seco,Personal Care,Cuidados Pessoais
 33,Credit Card Payments,Pagamentos de Cartão de Crédito,Debt Payments,Pagamentos de Dívidas
 34,Loan Payments,Pagamentos de Empréstimos,Debt Payments,Pagamentos de Dívidas
@@ -50,3 +50,4 @@ category_id,category,category_pt,upper_category,upper_category_pt
 48,Bank Fees,Taxas Bancárias,Fees & Charges,Taxas e Encargos
 49,Late Payment Fees,Multas por Atraso,Fees & Charges,Taxas e Encargos
 50,E-commerce,E-commerce,Shopping,Compras
+51,Bus,Ônibus,Transportation,Transporte
