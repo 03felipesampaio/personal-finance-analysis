@@ -1,0 +1,52 @@
+category_id,category,category_pt,upper_category,upper_category_pt
+-1,Unknown,Desconhecido,Unknown,Desconhecido
+1,Groceries,Mercado,Food & Dining,Alimentação
+2,Restaurants,Restaurantes,Food & Dining,Alimentação
+3,Coffee Shops,Cafeterias,Food & Dining,Alimentação
+4,Fast Food,Comida Rápida,Food & Dining,Alimentação
+5,Delivery Services,Serviços de Entrega,Food & Dining,Alimentação
+6,Rent,Aluguel,Housing,Moradia
+7,Mortgage,Hipoteca,Housing,Moradia
+8,Property Taxes,Impostos sobre Propriedades,Housing,Moradia
+9,Home Maintenance,Manutenção Residencial,Housing,Moradia
+10,Utilities,Serviços Públicos,Housing,Moradia
+11,Fuel,Combustível,Transportation,Transporte
+12,Public Transit,Transporte Público,Transportation,Transporte
+13,Ride-Sharing,Carona,Transportation,Transporte
+14,Vehicle Maintenance,Manutenção de Veículos,Transportation,Transporte
+15,Parking,Estacionamento,Transportation,Transporte
+16,Insurance Premiums,Prêmios de Seguro,Healthcare,Saúde
+17,Doctor Visits,Consultas Médicas,Healthcare,Saúde
+18,Medications,Medicamentos,Healthcare,Saúde
+19,Dental Care,Cuidados Odontológicos,Healthcare,Saúde
+20,Vision Care,Cuidados com a Visão,Healthcare,Saúde
+21,Tuition,Mensalidades,Education,Educação
+22,Books & Supplies,Livros e Materiais,Education,Educação
+23,Online Courses,Cursos Online,Education,Educação
+24,Childcare/Preschool,Cuidado Infantil/Pré-escola,Education,Educação
+25,Movies,Cinema,Entertainment & Recreation,Entretenimento e Lazer
+26,Subscriptions,Assinaturas,Entertainment & Recreation,Entretenimento e Lazer
+27,Sports & Fitness,Esportes e Fitness,Entertainment & Recreation,Entretenimento e Lazer
+28,Hobbies,Hobbies,Entertainment & Recreation,Entretenimento e Lazer
+29,Travel & Vacations,Viagens e Férias,Entertainment & Recreation,Entretenimento e Lazer
+30,Haircuts & Beauty,Cortes de Cabelo e Beleza,Personal Care,Cuidados Pessoais
+31,Clothing & Accessories,Roupas e Acessórios,Shopping,Compras
+32,Laundry & Dry Cleaning,Lavanderia e Lavagem a Seco,Personal Care,Cuidados Pessoais
+33,Credit Card Payments,Pagamentos de Cartão de Crédito,Debt Payments,Pagamentos de Dívidas
+34,Loan Payments,Pagamentos de Empréstimos,Debt Payments,Pagamentos de Dívidas
+35,Student Loans,Empréstimos Estudantis,Debt Payments,Pagamentos de Dívidas
+36,Emergency Fund,Fundo de Emergência,Savings & Investments,Poupança e Investimentos
+37,Short-Term Goals,Objetivos de Curto Prazo,Savings & Investments,Poupança e Investimentos
+38,Stock Market,Mercado de Ações,Savings & Investments,Poupança e Investimentos
+39,Mutual Funds,Fundos Mútuos,Savings & Investments,Poupança e Investimentos
+40,Cryptocurrency,Criptomoeda,Savings & Investments,Poupança e Investimentos
+41,Real Estate,Imóveis,Savings & Investments,Poupança e Investimentos
+42,Income Taxes,Imposto de Renda,Taxes,Impostos
+43,Property Taxes,Impostos sobre Propriedades,Taxes,Impostos
+44,Sales Taxes,Impostos sobre Vendas,Taxes,Impostos
+45,Business Taxes,Impostos Empresariais,Taxes,Impostos
+46,Charitable Donations,Doações de Caridade,Gifts & Donations,Presentes e Doações
+47,Birthday Gifts,Presentes de Aniversário,Gifts & Donations,Presentes e Doações
+48,Bank Fees,Taxas Bancárias,Fees & Charges,Taxas e Encargos
+49,Late Payment Fees,Multas por Atraso,Fees & Charges,Taxas e Encargos
+50,E-commerce,E-commerce,Shopping,Compras
