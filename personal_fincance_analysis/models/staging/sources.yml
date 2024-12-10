@@ -12,3 +12,4 @@ sources:
       - name: bills_nubank_regex_mapping
       - name: places
       - name: transaction_types
+      - name: categories
