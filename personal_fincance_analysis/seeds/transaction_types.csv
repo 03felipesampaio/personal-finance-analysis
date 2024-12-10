@@ -13,3 +13,6 @@ type_id,type_description,type_description_pt
 12,Pix sent,Pix enviado
 13,Pix received,Pix recebido
 14,Payment slip,Boleto
+15,Antecipated installment,Parcela Antecipada
+16,Late credit,Crédito de Atraso
+17,Late balance,Saldo de Atraso
