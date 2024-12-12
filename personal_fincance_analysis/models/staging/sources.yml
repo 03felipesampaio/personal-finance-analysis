@@ -13,3 +13,4 @@ sources:
       - name: places
       - name: transaction_types
       - name: categories
+      - name: coins
