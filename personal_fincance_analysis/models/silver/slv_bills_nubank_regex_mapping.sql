@@ -2,7 +2,7 @@ with source as (
     select 
         regex_id,
         regex_pattern,
-        place_id,
+        case when place_id is null then -1 else place_id end as place_id,
         transaction_type,
         description,
         active,
