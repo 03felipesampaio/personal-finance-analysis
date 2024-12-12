@@ -1,8 +1,9 @@
 with bills_raw as (
-    select *
+    select 
+        *
     from {{ ref('stg_bills__nubank') }}
 ),
-bills_with_transaction_type as (
+bills as (
     select
         bank_name,
         bill_date,
@@ -11,41 +12,24 @@ bills_with_transaction_type as (
         bill_start_date,
         bill_end_date,
         transaction_date,
-
-        case
-            when transaction_description like 'Antecipada %' then 'Antecipated installment'
-            when transaction_description like '"Credito de' then 'Refund'
-            when transaction_description = 'Crédito de atraso' then 'Late credit'
-            when transaction_description = 'Crédito de parcelamento de compra' then 'Installment credit'
-            when transaction_description like 'Desconto Antecipação %' then 'Antecipated discount'
-            when transaction_description like '"Estorno de %' then 'Refund'
-            when transaction_description like '"IOF de %' then 'Fee'
-            when transaction_description = 'IOF de atraso' then 'Late payment fee'
-            when transaction_description = 'Juros de atraso' then 'Late interest'
-            when transaction_description = 'Multa de atraso' then 'Late fee'
-            when transaction_description like 'Pagamento em %' then 'Bill payment'
-            when transaction_description like '"Parcelamento de compra %' then 'Credit Card'
-            when transaction_description = 'Saldo em atraso' then 'Late balance'
-            -- Tem muita informação no Ifood que dá pra extrair
-            -- when regexp_contains(transaction_description, r' - \d+/\d+') then 'Credit card parcell'
-            else 'Credit card' end
-        as transaction_type,
-
+        coalesce(type_dimension.type_id, -1) as type_id,
+        bills_raw.transaction_type,
+        ABS(FARM_FINGERPRINT(transaction_description)) description_id,
         transaction_description,
-        transaction_value,
-        transaction_category
+        coalesce(mapping.place_id, -1) as place_id,
+        coalesce(bills_raw.transaction_category, place_dimension.category_id, -1) as category_id,
+        coin_dimension.coin_id,
+        coin_dimension.coin_symbol,
+        transaction_value
 
     from bills_raw
-),
-bills_with_location as (
-    select
-        *,
-        -- The locations are in the description, if the transactions has installments we need to remove it
-        case
-            when transaction_type = 'Credit card' then regexp_replace(transaction_description, r' - \d+/\d+\s*$', '')
-            else 'Nubank' end
-        as transaction_location
-    from bills_with_transaction_type
-    -- where transaction_description = 'Credit card'
+    left join {{ ref("type_dimension") }}
+        on bills_raw.transaction_type = type_dimension.type_description
+    left join {{ ref("slv_bills_nubank_regex_mapping") }} mapping
+        on regexp_contains(transaction_description, regex_pattern)
+            and mapping.active = true
+    left join {{ ref("place_dimension") }} as place_dimension
+        on place_dimension.place_id = mapping.place_id
+    join {{ ref("coin_dimension") }} on coin_dimension.coin_code = 'BRL'
 )
-select * from bills_with_location
+select * from bills
