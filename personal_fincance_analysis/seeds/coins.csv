@@ -1,0 +1,10 @@
+coin_id,coin_code,coin_name,coin_symbol,coin_type,thousands_separator,decimal_separator
+1,BRL,Real,R$,Fiat,.,","
+2,USD,US Dollar,$,Fiat,",",.
+3,EUR,Euro,€,Fiat,.,","
+4,GBP,British Pound,£,Fiat,",",.
+5,JPY,Japanese Yen,¥,Fiat,",",.
+6,BTC,Bitcoin,₿,Cryptocurrency,.,","
+7,ETH,Ethereum,Ξ,Cryptocurrency,.,","
+8,CAD,Canadian Dollar,$,Fiat,.,","
+9,AUD,Australian Dollar,$,Fiat,.,","
