@@ -5,7 +5,9 @@ with bills_raw as (
 ),
 bills as (
     select
+        ABS(FARM_FINGERPRINT(CONCAT(bank_name, source_type, bill_start_date, bill_end_date))) AS source_id,
         bank_name,
+        source_type,
         bill_date,
         bill_reference_month,
         bill_value,
