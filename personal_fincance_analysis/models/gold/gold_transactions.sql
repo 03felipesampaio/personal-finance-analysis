@@ -1,6 +1,6 @@
 {{
     config(
-    materialized = 'view',
+    materialized = 'materialized_view',
     schema = 'expenses_tracker_gold'
     )
 }}
@@ -17,6 +17,7 @@ transactions as (
         
         source_dimension.bank_name,
         source_dimension.source_type,
+        {# source_dimension. #}
 
         description_dimension.description,
 
