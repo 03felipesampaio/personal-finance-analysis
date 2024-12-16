@@ -14,3 +14,4 @@ sources:
       - name: transaction_types
       - name: categories
       - name: coins
+      - name: bills_inter_regex_mapping
