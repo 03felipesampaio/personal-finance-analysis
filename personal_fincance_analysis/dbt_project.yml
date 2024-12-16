@@ -40,6 +40,9 @@ models:
       +enabled: true
       +materialized: table
       +schema: expenses_tracker_silver
+    gold:
+      +materialized: view
+      +schema: expenses_tracker_gold
 
 seeds:
   personal_fincance_analysis:
