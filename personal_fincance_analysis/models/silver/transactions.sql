@@ -10,8 +10,22 @@ with nubank_bills as (
         transaction_value * -1 as amount -- Since it's a bill, the value is negative
     from {{ ref("slv_bills_nubank") }}
 ),
+bills_inter as (
+    select 
+        transaction_date,
+        source_id,
+        description_id,
+        place_id,
+        type_id,
+        category_id,
+        coin_id,
+        transaction_value * -1 as amount -- Since it's a bill, the value is negative
+    from {{ ref("slv_bills_inter") }}
+),
 all_sources as (
     select * from nubank_bills
+    union all
+    select * from bills_inter
     -- Union from here
 )
 select 
