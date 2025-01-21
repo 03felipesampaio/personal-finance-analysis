@@ -22,10 +22,38 @@ bills_inter as (
         transaction_value * -1 as amount -- Since it's a bill, the value is negative
     from {{ ref("slv_bills_inter") }}
 ),
+statements_nubank as (
+    select 
+        transaction_date,
+        source_id,
+        description_id,
+        place_id,
+        type_id,
+        category_id,
+        coin_id,
+        transaction_value
+    from {{ ref("slv_statements_nubank") }}
+),
+statements_inter as (
+    select 
+        transaction_date,
+        source_id,
+        description_id,
+        place_id,
+        type_id,
+        category_id,
+        coin_id,
+        transaction_value
+    from {{ ref("slv_statements_inter") }}
+),
 all_sources as (
     select * from nubank_bills
     union all
     select * from bills_inter
+    union all
+    select * from statements_nubank
+    union all
+    select * from statements_inter
     -- Union from here
 )
 select 
