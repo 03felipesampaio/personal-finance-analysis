@@ -1,3 +1,7 @@
+{{ config(
+    materialized='table'
+) }}
+
 with bills_nubank as (
   select 
     bank_name,
