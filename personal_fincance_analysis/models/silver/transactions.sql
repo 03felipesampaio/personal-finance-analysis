@@ -16,6 +16,11 @@ refunded_transactions as (
     select buy_transaction_id as transaction_id from {{ ref('refunds') }}
     union all
     select refund_transaction_id as transaction_id from {{ ref('refunds') }}
+),
+bill_payments_transactions as (
+    select transaction_id_incomes as transaction_id from {{ ref('bill_payments') }}
+    union all
+    select transaction_id_expenses as transaction_id from {{ ref('bill_payments') }}
 )
 select 
     *,
@@ -30,3 +35,4 @@ select
 from stg_transactions
 where 1=1
  and transaction_id not in (select transaction_id from refunded_transactions where transaction_id is not null)
+ and transaction_id not in (select transaction_id from bill_payments_transactions where transaction_id is not null)
