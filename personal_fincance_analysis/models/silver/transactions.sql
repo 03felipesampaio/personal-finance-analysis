@@ -29,4 +29,4 @@ select
     SUM(amount) OVER (ORDER BY transaction_date RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) as daily_cumulative_balance
 from stg_transactions
 where 1=1
- and transaction_id not in (select transaction_id from refunded_transactions)
+ and transaction_id not in (select transaction_id from refunded_transactions where transaction_id is not null)
