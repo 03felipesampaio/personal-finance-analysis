@@ -4,9 +4,9 @@ type_id,type_description,type_description_pt
 2,Debit card,Cartão de débito
 3,Transfer sent,Transferência
 4,Withdrawal,Saque
-5,Bill payment,Pagamento de Conta
-6,Wire transfer,Transferência Bancária
-7,Loan payment,Pagamento de Empréstimo
+5,Bill payment,Pagamento de conta
+6,Wire transfer,Transferência bancária
+7,Loan payment,Pagamento de empréstimo
 8,Refund,Estorno
 9,Deposit,Depósito
 10,Fee,Taxa
@@ -14,10 +14,13 @@ type_id,type_description,type_description_pt
 12,Pix sent,Pix enviado
 13,Pix received,Pix recebido
 14,Payment slip,Boleto
-15,Antecipated installment,Parcela Antecipada
-16,Late credit,Crédito de Atraso
-17,Late balance,Saldo de Atraso
+15,Antecipation installment,Parcela antecipada
+16,Late credit,Crédito de atraso
+17,Late balance,Saldo de atraso
 18,Investment,Investimento
 19,Cashback,Cashback
-20,Automatic debit,Débito Automático
-21,Transfer received,Transferência Recebida
+20,Automatic debit,Débito automático
+21,Transfer received,Transferência recebida
+22,Late interest,Juros de atraso
+23,Late fee,Multa de atraso
+24,Antecipation discount,Desconto antecipado
