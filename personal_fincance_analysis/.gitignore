@@ -2,3 +2,5 @@
 target/
 dbt_packages/
 logs/
+
+transfer_between_accounts_patterns.csv
