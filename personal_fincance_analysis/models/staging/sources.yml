@@ -17,3 +17,4 @@ sources:
       - name: bills_inter_regex_mapping
       - name: statements_nubank_regex_mapping
       - name: statements_inter_regex_mapping
+      - name: transfer_between_accounts_patterns
