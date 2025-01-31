@@ -15,6 +15,10 @@ with source as (
             when transaction_description = 'Pagamento da fatura - Cartão Nubank' then 'Bill payment'
             when transaction_description = 'Pagamento de fatura' then 'Bill payment'
             when transaction_description like 'Pagamento de boleto efetuado %' then 'Payment slip'
+
+            -- Tranfers between accounts are stored separately
+            when pattern is not null then 'Transfer between accounts'
+
             when transaction_description like 'Transferência Recebida - %' then 'Transfer received'
             when transaction_description like 'Transferência enviada - %' then 'Tranfer sent'
             when transaction_description like 'Transferência enviada pelo Pix - %' then 'Pix sent'
@@ -25,5 +29,7 @@ with source as (
         transaction_value,
         transaction_category 
     from {{ source('bronze', 'statements__nubank') }}
+    left join {{ ref('stg_transfer_between_accounts_patterns') }}
+        on regexp_contains(transaction_description, pattern)
 )
 select * from source

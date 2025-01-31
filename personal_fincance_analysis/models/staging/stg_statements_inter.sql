@@ -22,13 +22,21 @@ with source as (
             when transaction_description like 'Pagamento fatura cartão Inter' then 'Bill payment'
             when transaction_description like 'Débito automático -%' then 'Automatic debit'
             when transaction_description like 'Estorno %' then 'Refund'
+
+            -- Tranfers between accounts are stored separately
+            when pattern is not null then 'Transfer between accounts'
+
             when transaction_description like 'Pix enviado: %' then 'Pix sent'
+            when transaction_description like 'Cp :%' and transaction_value < 0 then 'Pix sent'
             when transaction_description like 'Pix recebido: %' then 'Pix received'
+            when transaction_description like 'Cp :%' and transaction_value >= 0 then 'Pix received'
             else 'Debit card' end
         as transaction_type,
         transaction_description,
         transaction_value,
         transaction_category 
     from {{ source('bronze', 'statements__inter') }}
+    left join {{ ref('stg_transfer_between_accounts_patterns') }}
+        on regexp_contains(transaction_description, pattern)
 )
 select * from source
