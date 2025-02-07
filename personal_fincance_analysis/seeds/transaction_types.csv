@@ -24,3 +24,4 @@ type_id,type_description,type_description_pt
 22,Late interest,Juros de atraso
 23,Late fee,Multa de atraso
 24,Antecipation discount,Desconto antecipado
+25,Transfer between accounts,Transferência entre contas
