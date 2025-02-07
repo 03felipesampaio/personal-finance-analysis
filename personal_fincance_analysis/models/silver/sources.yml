@@ -1,0 +1,280 @@
+version: 2
+
+models:
+    - name: bill_payments
+      description: "Model for bill payments"
+      columns:
+        - name: transaction_id_incomes
+          description: "Transaction ID for incomes"
+        - name: transaction_id_expenses
+          description: "Transaction ID for expenses"
+
+    - name: category_dimension
+      description: "Dimension table for categories"
+      columns:
+        - name: category_id
+          description: "Unique identifier for the category"
+        - name: category
+          description: "Name of the category in English"
+        - name: category_pt
+          description: "Name of the category in Portuguese"
+        - name: upper_category
+          description: "Higher-level category in English"
+        - name: upper_category_pt
+          description: "Higher-level category in Portuguese"
+
+    - name: coin_dimension
+      description: "Dimension table for coins"
+      columns:
+        - name: coin_id
+          description: "Unique identifier for the coin"
+        - name: coin_code
+          description: "Code of the coin"
+        - name: coin_name
+          description: "Name of the coin"
+        - name: coin_symbol
+          description: "Symbol of the coin"
+        - name: coin_type
+          description: "Type of the coin (e.g., Fiat, Cryptocurrency)"
+        - name: thousands_separator
+          description: "Thousands separator used for the coin"
+        - name: decimal_separator
+          description: "Decimal separator used for the coin"
+
+    - name: date_dimension
+      description: "Dimension table for dates"
+      columns:
+        - name: date_full
+          description: "Full date"
+        - name: year
+          description: "Year"
+        - name: quarter
+          description: "Quarter"
+        - name: month
+          description: "Month"
+        - name: month_number
+          description: "Month number"
+        - name: week_number
+          description: "Week number"
+        - name: day
+          description: "Day"
+        - name: day_name_en
+          description: "Day name in English"
+        - name: day_name_pt
+          description: "Day name in Portuguese"
+        - name: is_weekend
+          description: "Indicates if the day is a weekend"
+
+    - name: description_dimension
+      description: "Dimension table for descriptions"
+      columns:
+        - name: description_id
+          description: "Unique identifier for the description"
+        - name: description
+          description: "Description text"
+
+    - name: place_dimension
+      description: "Dimension table for places"
+      columns:
+        - name: place_id
+          description: "Unique identifier for the place"
+        - name: place
+          description: "Name of the place"
+        - name: is_online
+          description: "Indicates if the place is online or physical"
+        - name: category_id
+          description: "Category ID associated with the place"
+
+    - name: refunds
+      description: "Model for refunds"
+      columns:
+        - name: buy_transaction_id
+          description: "Transaction ID for the purchase"
+        - name: refund_transaction_id
+          description: "Transaction ID for the refund"
+
+    - name: slv_bills_inter
+      description: "Silver model for Inter bank bills"
+      columns:
+        - name: source_id
+          description: "Unique identifier for the source"
+        - name: bank_name
+          description: "Name of the bank"
+        - name: source_type
+          description: "Type of the source"
+        - name: bill_date
+          description: "Date of the bill"
+        - name: bill_reference_month
+          description: "Reference month of the bill"
+        - name: bill_value
+          description: "Value of the bill"
+        - name: bill_start_date
+          description: "Start date of the bill"
+        - name: bill_end_date
+          description: "End date of the bill"
+        - name: transaction_date
+          description: "Date of the transaction"
+        - name: type_id
+          description: "Type ID of the transaction"
+        - name: transaction_type
+          description: "Type of the transaction"
+        - name: description_id
+          description: "Description ID of the transaction"
+        - name: transaction_description
+          description: "Description of the transaction"
+        - name: place_id
+          description: "Place ID associated with the transaction"
+        - name: category_id
+          description: "Category ID associated with the transaction"
+        - name: coin_id
+          description: "Coin ID associated with the transaction"
+        - name: coin_symbol
+          description: "Symbol of the coin"
+        - name: transaction_value
+          description: "Value of the transaction"
+
+    - name: slv_bills_inter_regex_mapping
+      description: "Silver model for Inter bank bills regex mapping"
+      columns:
+        - name: regex_id
+          description: "Unique identifier for the regex pattern"
+        - name: regex_pattern
+          description: "Regular expression pattern to identify transactions"
+        - name: place_id
+          description: "Place ID associated with the transaction"
+        - name: transaction_type
+          description: "Type of transaction"
+        - name: description
+          description: "Description of the transaction"
+        - name: active
+          description: "Indicates if the pattern is active"
+        - name: priority
+          description: "Priority of the pattern"
+
+    - name: slv_bills_nubank
+      description: "Silver model for Nubank bills"
+      columns:
+        - name: source_id
+          description: "Unique identifier for the source"
+        - name: bank_name
+          description: "Name of the bank"
+        - name: source_type
+          description: "Type of the source"
+        - name: bill_date
+          description: "Date of the bill"
+        - name: bill_reference_month
+          description: "Reference month of the bill"
+        - name: bill_value
+          description: "Value of the bill"
+        - name: bill_start_date
+          description: "Start date of the bill"
+        - name: bill_end_date
+          description: "End date of the bill"
+        - name: transaction_date
+          description: "Date of the transaction"
+        - name: type_id
+          description: "Type ID of the transaction"
+        - name: transaction_type
+          description: "Type of the transaction"
+        - name: description_id
+          description: "Description ID of the transaction"
+        - name: transaction_description
+          description: "Description of the transaction"
+        - name: place_id
+          description: "Place ID associated with the transaction"
+        - name: category_id
+          description: "Category ID associated with the transaction"
+        - name: coin_id
+          description: "Coin ID associated with the transaction"
+        - name: coin_symbol
+          description: "Symbol of the coin"
+        - name: transaction_value
+          description: "Value of the transaction"
+
+    - name: slv_bills_nubank_regex_mapping
+      description: "Silver model for Nubank bills regex mapping"
+      columns:
+        - name: regex_id
+          description: "Unique identifier for the regex pattern"
+        - name: regex_pattern
+          description: "Regular expression pattern to identify transactions"
+        - name: place_id
+          description: "Place ID associated with the transaction"
+        - name: transaction_type
+          description: "Type of transaction"
+        - name: description
+          description: "Description of the transaction"
+        - name: active
+          description: "Indicates if the pattern is active"
+        - name: priority
+          description: "Priority of the pattern"
+
+    - name: source_dimension
+      description: "Dimension table for sources"
+      columns:
+        - name: source_id
+          description: "Unique identifier for the source"
+        - name: bank_name
+          description: "Name of the bank"
+        - name: source_type
+          description: "Type of the source"
+        - name: source_account
+          description: "Account associated with the source"
+        - name: source_start
+          description: "Start date of the source"
+        - name: source_end
+          description: "End date of the source"
+        - name: bill_date
+          description: "Date of the bill"
+        - name: bill_amount
+          description: "Amount of the bill"
+
+    - name: transactions
+      description: "Model for transactions"
+      columns:
+        - name: transaction_id
+          description: "Unique identifier for the transaction"
+        - name: transaction_date
+          description: "Date of the transaction"
+        - name: source_id
+          description: "Source ID associated with the transaction"
+        - name: description_id
+          description: "Description ID associated with the transaction"
+        - name: place_id
+          description: "Place ID associated with the transaction"
+        - name: type_id
+          description: "Type ID associated with the transaction"
+        - name: category_id
+          description: "Category ID associated with the transaction"
+        - name: coin_id
+          description: "Coin ID associated with the transaction"
+        - name: amount
+          description: "Amount of the transaction"
+        - name: income_or_expense
+          description: "Indicates if the transaction is an income or expense"
+        - name: amount_abs
+          description: "Absolute value of the amount"
+        - name: daily_balance
+          description: "Daily balance of the transactions"
+        - name: daily_cumulative_balance
+          description: "Cumulative daily balance of the transactions"
+
+    - name: transfers_between_accounts
+      description: "Model for transfers between accounts"
+      columns:
+        - name: transfer_id
+          description: "Unique identifier for the transfer"
+        - name: out_transaction_id
+          description: "Transaction ID for the outgoing transfer"
+        - name: in_transaction_id
+          description: "Transaction ID for the incoming transfer"
+
+    - name: type_dimension
+      description: "Dimension table for transaction types"
+      columns:
+        - name: type_id
+          description: "Unique identifier for the transaction type"
+        - name: type_description
+          description: "Description of the transaction type in English"
+        - name: type_description_pt
+          description: "Description of the transaction type in Portuguese"
