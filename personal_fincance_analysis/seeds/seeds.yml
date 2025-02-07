@@ -1,0 +1,174 @@
+version: 2
+
+seeds:
+    - name: categories
+      description: "Financial categories defined by the user"
+      columns:
+        - name: category_id
+          description: "Unique identifier for the category. It is a primary key and it needs to be incremented by the user."
+          data_tests:
+            - unique
+        - name: category
+          description: "Name of the category in English"
+        - name: category_pt
+          description: "Name of the category in Portuguese"
+        - name: upper_category
+          description: "Higher-level category in English"
+        - name: upper_category_pt
+          description: "Higher-level category in Portuguese"
+
+    - name: transfer_between_accounts_patterns
+      description: "Patterns to identify transfers between accounts"
+      columns:
+        - name: pattern
+          description: "Regular expression pattern to identify transfer transactions"
+
+    - name: bills_inter_regex_mapping
+      description: "Regex patterns for mapping Inter bank bills"
+      columns:
+        - name: regex_id
+          description: "Unique identifier for the regex pattern"
+          data_tests:
+            - unique
+        - name: regex_pattern
+          description: "Regular expression pattern to identify transactions"
+        - name: place
+          description: "Place associated with the transaction"
+        - name: transaction_type
+          description: "Type of transaction"
+        - name: description
+          description: "Description of the transaction"
+        - name: active
+          description: "Indicates if the pattern is active"
+        - name: priority
+          description: "Priority of the pattern"
+        - name: insertion_time
+          description: "Time when the pattern was inserted"
+        - name: not_active_since
+          description: "Time since the pattern is not active"
+        - name: last_update
+          description: "Last update time of the pattern"
+
+    - name: bills_nubank_regex_mapping
+      description: "Regex patterns for mapping Nubank bills"
+      columns:
+        - name: regex_id
+          description: "Unique identifier for the regex pattern"
+          data_tests:
+            - unique
+        - name: regex_pattern
+          description: "Regular expression pattern to identify transactions"
+        - name: place
+          description: "Place associated with the transaction"
+        - name: transaction_type
+          description: "Type of transaction"
+        - name: description
+          description: "Description of the transaction"
+        - name: active
+          description: "Indicates if the pattern is active"
+        - name: priority
+          description: "Priority of the pattern"
+        - name: insertion_time
+          description: "Time when the pattern was inserted"
+        - name: not_active_since
+          description: "Time since the pattern is not active"
+        - name: last_update
+          description: "Last update time of the pattern"
+
+    - name: coins
+      description: "Information about different types of coins"
+      columns:
+        - name: coin_id
+          description: "Unique identifier for the coin"
+          data_tests:
+            - unique
+        - name: coin_code
+          description: "Code of the coin"
+        - name: coin_name
+          description: "Name of the coin"
+        - name: coin_symbol
+          description: "Symbol of the coin"
+        - name: coin_type
+          description: "Type of the coin (e.g., Fiat, Cryptocurrency)"
+        - name: thousands_separator
+          description: "Thousands separator used for the coin"
+        - name: decimal_separator
+          description: "Decimal separator used for the coin"
+
+    - name: places
+      description: "Information about different places"
+      columns:
+        - name: place_id
+          description: "Unique identifier for the place"
+          data_tests:
+            - unique
+        - name: place
+          description: "Name of the place"
+        - name: is_online
+          description: "Indicates if the place is online or physical"
+        - name: category
+          description: "Category of the place"
+
+    - name: statements_inter_regex_mapping
+      description: "Regex patterns for mapping Inter bank statements"
+      columns:
+        - name: regex_id
+          description: "Unique identifier for the regex pattern"
+          data_tests:
+            - unique
+        - name: regex_pattern
+          description: "Regular expression pattern to identify transactions"
+        - name: place
+          description: "Place associated with the transaction"
+        - name: transaction_type
+          description: "Type of transaction"
+        - name: description
+          description: "Description of the transaction"
+        - name: active
+          description: "Indicates if the pattern is active"
+        - name: priority
+          description: "Priority of the pattern"
+        - name: insertion_time
+          description: "Time when the pattern was inserted"
+        - name: not_active_since
+          description: "Time since the pattern is not active"
+        - name: last_update
+          description: "Last update time of the pattern"
+
+    - name: statements_nubank_regex_mapping
+      description: "Regex patterns for mapping Nubank statements"
+      columns:
+        - name: regex_id
+          description: "Unique identifier for the regex pattern"
+          data_tests:
+            - unique
+        - name: regex_pattern
+          description: "Regular expression pattern to identify transactions"
+        - name: place
+          description: "Place associated with the transaction"
+        - name: transaction_type
+          description: "Type of transaction"
+        - name: description
+          description: "Description of the transaction"
+        - name: active
+          description: "Indicates if the pattern is active"
+        - name: priority
+          description: "Priority of the pattern"
+        - name: insertion_time
+          description: "Time when the pattern was inserted"
+        - name: not_active_since
+          description: "Time since the pattern is not active"
+        - name: last_update
+          description: "Last update time of the pattern"
+
+    - name: transaction_types
+      description: "Different types of transactions"
+      columns:
+        - name: type_id
+          description: "Unique identifier for the transaction type"
+          data_tests:
+            - unique
+        - name: type_description
+          description: "Description of the transaction type in English"
+        - name: type_description_pt
+          description: "Description of the transaction type in Portuguese"
