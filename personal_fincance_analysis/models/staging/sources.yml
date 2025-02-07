@@ -6,9 +6,13 @@ sources:
 
     tables:
       - name: bills__inter
+        description: "Bills from Inter bank"
       - name: bills__nubank
+        description: "Bills from Nubank"
       - name: statements__nubank
+        description: "Statements from Nubank"
       - name: statements__inter
+        description: "Statements from Inter bank"
       - name: bills_nubank_regex_mapping
       - name: places
       - name: transaction_types
@@ -18,3 +22,332 @@ sources:
       - name: statements_nubank_regex_mapping
       - name: statements_inter_regex_mapping
       - name: transfer_between_accounts_patterns
+
+models:
+  - name: stg_bills__nubank
+    description: "Staging table for Nubank bills"
+    columns:
+      - name: bank_name
+        description: "Name of the bank"
+      - name: source_type
+        description: "Type of the source (Credit Card Bill or Bank Statement)"
+      - name: bill_date
+        description: "Date of the bill"
+      - name: bill_reference_month
+        description: "Reference month of the bill (e.g. 2021-01)"
+      - name: bill_value
+        description: "Value of the bill"
+      - name: bill_start_date
+        description: "Start date of the bill period"
+      - name: bill_end_date
+        description: "End date of the bill period"
+      - name: transaction_date
+        description: "Date of the transaction"
+      - name: transaction_type
+        description: "Type of the transaction"
+      - name: transaction_description
+        description: "Description of the transaction from the source"
+      - name: transaction_value
+        description: "Value of the transaction"
+      - name: transaction_category
+        description: "Category of the transaction"
+    data_tests:
+      - unique:
+          column_name: bank_name
+      - not_null:
+          column_name: bank_name
+
+  - name: stg_bills_inter
+    description: "Staging table for Inter bank bills"
+    columns:
+      - name: bank_name
+        description: "Name of the bank"
+      - name: source_type
+        description: "Type of the source (Credit Card Bill or Bank Statement)"
+      - name: bill_date
+        description: "Date of the bill"
+      - name: bill_reference_month
+        description: "Reference month of the bill"
+      - name: bill_value
+        description: "Value of the bill"
+      - name: bill_start_date
+        description: "Start date of the bill period"
+      - name: bill_end_date
+        description: "End date of the bill period"
+      - name: transaction_date
+        description: "Date of the transaction"
+      - name: transaction_type
+        description: "Type of the transaction"
+      - name: transaction_description
+        description: "Description of the transaction"
+      - name: transaction_value
+        description: "Value of the transaction"
+      - name: transaction_category
+        description: "Category of the transaction"
+    data_tests:
+      - unique:
+          column_name: bank_name
+      - not_null:
+          column_name: bank_name
+
+  - name: stg_bills_inter_regex_mapping
+    description: "Staging table for Inter bank bills regex mapping"
+    columns:
+      - name: regex_id
+        description: "ID of the regex pattern"
+      - name: regex_pattern
+        description: "Regex pattern"
+      - name: place
+        description: "Place associated with the regex pattern"
+      - name: transaction_type
+        description: "Type of the transaction"
+      - name: description
+        description: "Description of the regex pattern"
+      - name: active
+        description: "Whether the regex pattern is active"
+      - name: priority
+        description: "Priority of the regex pattern"
+    data_tests:
+      - unique:
+          column_name: regex_id
+      - not_null:
+          column_name: regex_id
+
+  - name: stg_bills_nubank_regex_mapping
+    description: "Staging table for Nubank bills regex mapping"
+    columns:
+      - name: regex_id
+        description: "ID of the regex pattern"
+      - name: regex_pattern
+        description: "Regex pattern"
+      - name: place
+        description: "Place associated with the regex pattern"
+      - name: transaction_type
+        description: "Type of the transaction"
+      - name: description
+        description: "Description of the regex pattern"
+      - name: active
+        description: "Whether the regex pattern is active"
+      - name: priority
+        description: "Priority of the regex pattern"
+    data_tests:
+      - unique:
+          column_name: regex_id
+      - not_null:
+          column_name: regex_id
+
+  - name: stg_categories
+    description: "Staging table for categories"
+    columns:
+      - name: category_id
+        description: "ID of the category"
+      - name: category_name
+        description: "Name of the category"
+    data_tests:
+      - unique:
+          column_name: category_id
+      - not_null:
+          column_name: category_id
+
+  - name: stg_coins
+    description: "Staging table for coins"
+    columns:
+      - name: coin_id
+        description: "ID of the coin"
+      - name: coin_name
+        description: "Name of the coin"
+    data_tests:
+      - unique:
+          column_name: coin_id
+      - not_null:
+          column_name: coin_id
+
+  - name: stg_places
+    description: "Staging table for places"
+    columns:
+      - name: place_id
+        description: "ID of the place"
+      - name: place_name
+        description: "Name of the place"
+    data_tests:
+      - unique:
+          column_name: place_id
+      - not_null:
+          column_name: place_id
+
+  - name: stg_statements_inter
+    description: "Staging table for Inter bank statements"
+    columns:
+      - name: bank_name
+        description: "Name of the bank"
+      - name: source_type
+        description: "Type of the source (Credit Card Bill or Bank Statement)"
+      - name: statement_account_id
+        description: "ID of the statement account"
+      - name: statement_start_date
+        description: "Start date of the statement period"
+      - name: statement_end_date
+        description: "End date of the statement period"
+      - name: transaction_date
+        description: "Date of the transaction"
+      - name: transaction_type
+        description: "Type of the transaction"
+      - name: transaction_description
+        description: "Description of the transaction"
+      - name: transaction_value
+        description: "Value of the transaction"
+      - name: transaction_category
+        description: "Category of the transaction"
+    data_tests:
+      - unique:
+          column_name: bank_name
+      - not_null:
+          column_name: bank_name
+
+  - name: stg_statements_inter_regex_mapping
+    description: "Staging table for Inter bank statements regex mapping"
+    columns:
+      - name: regex_id
+        description: "ID of the regex pattern"
+      - name: regex_pattern
+        description: "Regex pattern"
+      - name: place
+        description: "Place associated with the regex pattern"
+      - name: transaction_type
+        description: "Type of the transaction"
+      - name: description
+        description: "Description of the regex pattern"
+      - name: active
+        description: "Whether the regex pattern is active"
+      - name: priority
+        description: "Priority of the regex pattern"
+    data_tests:
+      - unique:
+          column_name: regex_id
+      - not_null:
+          column_name: regex_id
+
+  - name: stg_statements_nubank
+    description: "Staging table for Nubank statements"
+    columns:
+      - name: bank_name
+        description: "Name of the bank"
+      - name: source_type
+        description: "Type of the source (Credit Card Bill or Bank Statement)"
+      - name: statement_account_id
+        description: "ID of the statement account"
+      - name: statement_start_date
+        description: "Start date of the statement period"
+      - name: statement_end_date
+        description: "End date of the statement period"
+      - name: transaction_date
+        description: "Date of the transaction"
+      - name: transaction_type
+        description: "Type of the transaction"
+      - name: transaction_description
+        description: "Description of the transaction"
+      - name: transaction_value
+        description: "Value of the transaction"
+      - name: transaction_category
+        description: "Category of the transaction"
+    data_tests:
+      - unique:
+          column_name: bank_name
+      - not_null:
+          column_name: bank_name
+
+  - name: stg_statements_nubank_regex_mapping
+    description: "Staging table for Nubank statements regex mapping"
+    columns:
+      - name: regex_id
+        description: "ID of the regex pattern"
+      - name: regex_pattern
+        description: "Regex pattern"
+      - name: place
+        description: "Place associated with the regex pattern"
+      - name: transaction_type
+        description: "Type of the transaction"
+      - name: description
+        description: "Description of the regex pattern"
+      - name: active
+        description: "Whether the regex pattern is active"
+      - name: priority
+        description: "Priority of the regex pattern"
+    data_tests:
+      - unique:
+          column_name: regex_id
+      - not_null:
+          column_name: regex_id
+
+  - name: stg_transaction_types
+    description: "Staging table for transaction types"
+    columns:
+      - name: transaction_type_id
+        description: "ID of the transaction type"
+      - name: transaction_type_name
+        description: "Name of the transaction type"
+    data_tests:
+      - unique:
+          column_name: transaction_type_id
+      - not_null:
+          column_name: transaction_type_id
+
+  - name: stg_transactions
+    description: "Staging table for transactions"
+    columns:
+      - name: transaction_id
+        description: "ID of the transaction"
+      - name: source_id
+        description: "ID of the source"
+        data_tests:
+          - relationships:
+              to: ref('stg_sources')
+              field: source_id
+      - name: type_id
+        description: "ID of the transaction type"
+        data_tests:
+          - relationships:
+              to: ref('stg_transaction_types')
+              field: transaction_type_id
+      - name: description_id
+        description: "ID of the transaction description"
+      - name: place_id
+        description: "ID of the place"
+        data_tests:
+          - relationships:
+              to: ref('stg_places')
+              field: place_id
+      - name: category_id
+        description: "ID of the category"
+        data_tests:
+          - relationships:
+              to: ref('stg_categories')
+              field: category_id
+      - name: transaction_date
+        description: "Date of the transaction"
+      - name: coin_id
+        description: "ID of the coin"
+        data_tests:
+          - relationships:
+              to: ref('stg_coins')
+              field: coin_id
+      - name: amount
+        description: "Amount of the transaction"
+    data_tests:
+      - unique:
+          column_name: transaction_id
+      - not_null:
+          column_name: transaction_id
+
+  - name: stg_transfer_between_accounts_patterns
+    description: "Staging table for transfer between accounts patterns"
+    columns:
+      - name: pattern_id
+        description: "ID of the pattern"
+      - name: pattern
+        description: "Pattern for identifying transfers between accounts"
+    data_tests:
+      - unique:
+          column_name: pattern_id
+      - not_null:
+          column_name: pattern_id
