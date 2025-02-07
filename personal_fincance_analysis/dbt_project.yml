@@ -43,10 +43,14 @@ models:
     gold:
       +materialized: view
       +schema: expenses_tracker_gold
+    +persist_docs:
+      relation: true
+      columns: true
 
 seeds:
   personal_fincance_analysis:
     +quote_columns: false
     +schema: expenses_tracker_bronze
-    bills_nubank_regex_mapping:
-      +materialized: seed
+    +persist_docs:
+      relation: true
+      columns: true
