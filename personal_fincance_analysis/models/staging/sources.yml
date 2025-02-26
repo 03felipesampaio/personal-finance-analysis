@@ -14,10 +14,6 @@ sources:
       - name: statements__inter
         description: "Statements from Inter bank"
       - name: bills_nubank_regex_mapping
-      - name: places
-      - name: transaction_types
-      - name: categories
-      - name: coins
       - name: bills_inter_regex_mapping
       - name: statements_nubank_regex_mapping
       - name: statements_inter_regex_mapping

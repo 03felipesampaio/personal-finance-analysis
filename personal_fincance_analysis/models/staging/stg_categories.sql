@@ -1,6 +1,6 @@
 with source as (
     select 
         *
-    from {{ source('bronze', 'categories') }}
+    from {{ ref('categories') }}
 )
 select * from source
