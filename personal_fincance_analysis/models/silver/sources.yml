@@ -37,6 +37,14 @@ models:
           description: "Higher-level category in Portuguese"
           data_tests:
             - not_null
+        - name: inserted_at
+          description: "Timestamp when the record was inserted"
+          data_tests:
+            - not_null
+        - name: updated_at
+          description: "Timestamp when the record was last updated"
+          data_tests:
+            - not_null
 
     - name: coin_dimension
       description: "Dimension table for coins"
@@ -68,6 +76,14 @@ models:
             - not_null
         - name: decimal_separator
           description: "Decimal separator used for the coin"
+          data_tests:
+            - not_null
+        - name: inserted_at
+          description: "Timestamp when the record was inserted"
+          data_tests:
+            - not_null
+        - name: updated_at
+          description: "Timestamp when the record was last updated"
           data_tests:
             - not_null
 
@@ -145,6 +161,14 @@ models:
           description: "Indicates if the place is online or physical"
         - name: category_id
           description: "Category ID associated with the place"
+          data_tests:
+            - not_null
+        - name: inserted_at
+          description: "Timestamp when the record was inserted"
+          data_tests:
+            - not_null
+        - name: updated_at
+          description: "Timestamp when the record was last updated"
           data_tests:
             - not_null
 
@@ -225,6 +249,14 @@ models:
           description: "Indicates if the pattern is active"
         - name: priority
           description: "Priority of the pattern"
+        - name: inserted_at
+          description: "Timestamp when the record was inserted"
+          data_tests:
+            - not_null
+        - name: updated_at
+          description: "Timestamp when the record was last updated"
+          data_tests:
+            - not_null
 
     - name: slv_bills_nubank
       description: "Silver model for Nubank bills"
@@ -291,6 +323,14 @@ models:
           description: "Indicates if the pattern is active"
         - name: priority
           description: "Priority of the pattern"
+        - name: inserted_at
+          description: "Timestamp when the record was inserted"
+          data_tests:
+            - not_null
+        - name: updated_at
+          description: "Timestamp when the record was last updated"
+          data_tests:
+            - not_null
 
     - name: source_dimension
       description: "Dimension table for sources"
@@ -387,6 +427,14 @@ models:
           description: "Transaction ID for the incoming transfer"
           data_tests:
             - unique
+        - name: inserted_at
+          description: "Timestamp when the record was inserted"
+          data_tests:
+            - not_null
+        - name: updated_at
+          description: "Timestamp when the record was last updated"
+          data_tests:
+            - not_null
 
     - name: type_dimension
       description: "Dimension table for transaction types"
@@ -402,5 +450,13 @@ models:
             - not_null
         - name: type_description_pt
           description: "Description of the transaction type in Portuguese"
+          data_tests:
+            - not_null
+        - name: inserted_at
+          description: "Timestamp when the record was inserted"
+          data_tests:
+            - not_null
+        - name: updated_at
+          description: "Timestamp when the record was last updated"
           data_tests:
             - not_null

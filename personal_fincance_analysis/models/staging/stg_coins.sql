@@ -1,4 +1,4 @@
 with source as (
-    select * from {{ source('bronze', 'coins') }}
+    select * from {{ ref('coins') }}
 )
 select * from source

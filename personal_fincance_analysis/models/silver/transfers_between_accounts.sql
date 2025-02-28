@@ -1,3 +1,9 @@
+{{ config(
+    materialized='incremental',
+    unique_key='transaction_id',
+    merge_exclude_columns = ['inserted_at']
+) }}
+
 with
 transactions as (
     select
@@ -26,5 +32,7 @@ transfers as (
         and (out.amount < 0 or out.amount is null)
 )
 select
-    *
+    *,
+    current_datetime() AS inserted_at,
+    current_datetime() AS updated_at,
 from transfers

@@ -7,7 +7,7 @@ with source as (
         description,
         active,
         priority
-      from {{ source('bronze', 'bills_nubank_regex_mapping') }}
+      from {{ ref('bills_nubank_regex_mapping') }}
 )
 select * from source
   
