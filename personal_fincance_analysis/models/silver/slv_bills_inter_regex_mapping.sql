@@ -1,3 +1,9 @@
+{{ config(
+    materialized='incremental',
+    unique_key='regex_id',
+    merge_exclude_columns = ['inserted_at']
+) }}
+
 with source as (
     select 
         regex_id,
@@ -6,8 +12,12 @@ with source as (
         transaction_type,
         description,
         active,
-        priority
+        priority,
     from {{ ref('stg_bills_inter_regex_mapping') }} as mapping
     left join {{ ref('stg_places') }} as places on mapping.place = places.place
 )
-select * from source
+select 
+    *,
+    current_datetime() AS inserted_at,
+    current_datetime() AS updated_at,
+from source
