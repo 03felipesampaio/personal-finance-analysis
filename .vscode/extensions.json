@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "bastienboutonnet.vscode-dbt",
+        "charliermarsh.ruff",
+        "dorzey.vscode-sqlfluff"
+    ]
+}
