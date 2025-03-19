@@ -1,0 +1,20 @@
+{
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "files.associations": {
+        "**/personal_finance_analysis/**/*.yaml": "jinja-yaml",
+        "**/personal_finance_analysis/**/*.yml": "jinja-yaml",
+        "**/personal_finance_analysis/**/*.sql": "jinja-sql",
+        "**/personal_finance_analysis/**/docs/**/*.md": "jinja-md"
+    },
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "sqlfluff.linter.run": "onSave",
+    "sqlfluff.experimental.format.executeInTerminal": true,
+    "sqlfluff.dialect": "bigquery",
+
+    "editor.formatOnSave": false,
+}
