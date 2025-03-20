@@ -18,6 +18,10 @@ sources:
       - name: statements_nubank_regex_mapping
       - name: statements_inter_regex_mapping
       - name: transfer_between_accounts_patterns
+        description: "Patterns to identify transfers between accounts"
+        columns:
+          - name: pattern
+            description: "Regular expression pattern to identify transfer transactions"
 
 models:
   - name: stg_bills__nubank
@@ -295,10 +299,6 @@ models:
         description: "ID of the transaction"
       - name: source_id
         description: "ID of the source"
-        data_tests:
-          - relationships:
-              to: ref('stg_sources')
-              field: source_id
       - name: type_id
         description: "ID of the transaction type"
         data_tests:

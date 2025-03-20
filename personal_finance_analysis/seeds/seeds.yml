@@ -17,11 +17,11 @@ seeds:
         - name: upper_category_pt
           description: "Higher-level category in Portuguese"
 
-    - name: transfer_between_accounts_patterns
-      description: "Patterns to identify transfers between accounts"
-      columns:
-        - name: pattern
-          description: "Regular expression pattern to identify transfer transactions"
+    #- name: transfer_between_accounts_patterns
+    #  description: "Patterns to identify transfers between accounts"
+    #  columns:
+    #    - name: pattern
+    #      description: "Regular expression pattern to identify transfer transactions"
 
     - name: bills_inter_regex_mapping
       description: "Regex patterns for mapping Inter bank bills"
