@@ -1,4 +1,3 @@
-select
-    pattern
+select pattern
 from
-    {{ ref('transfer_between_accounts_patterns') }}
+    {{ source('bronze', 'transfer_between_accounts_patterns') }}
