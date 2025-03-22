@@ -1,53 +1,53 @@
-category_id,category,category_pt,upper_category,upper_category_pt
--1,Unknown,Desconhecido,Unknown,Desconhecido
-1,Groceries,Mercado,Food,Alimentação
-2,Restaurants,Restaurantes,Food,Alimentação
-3,Coffee Shops,Cafeterias,Food,Alimentação
-4,Fast Food,Comida Rápida,Food,Alimentação
-5,Delivery Services,Serviços de Entrega,Food,Alimentação
-6,Rent,Aluguel,Housing,Moradia
-7,Mortgage,Hipoteca,Housing,Moradia
-8,Property Taxes,Impostos sobre Propriedades,Housing,Moradia
-9,Home Maintenance,Manutenção Residencial,Housing,Moradia
-10,Utilities,Serviços Públicos,Housing,Moradia
-11,Fuel,Combustível,Transportation,Transporte
-12,Public Transit,Transporte Público,Transportation,Transporte
-13,Ride-Sharing,Carona,Transportation,Transporte
-14,Vehicle Maintenance,Manutenção de Veículos,Transportation,Transporte
-15,Parking,Estacionamento,Transportation,Transporte
-16,Insurance Premiums,Prêmios de Seguro,Healthcare,Saúde
-17,Doctor Visits,Consultas Médicas,Healthcare,Saúde
-18,Medications,Medicamentos,Healthcare,Saúde
-19,Dental Care,Cuidados Odontológicos,Healthcare,Saúde
-20,Vision Care,Cuidados com a Visão,Healthcare,Saúde
-21,Tuition,Mensalidades,Education,Educação
-22,Books & Supplies,Livros e Materiais,Education,Educação
-23,Online Courses,Cursos Online,Education,Educação
-24,Childcare/Preschool,Cuidado Infantil/Pré-escola,Education,Educação
-25,Movies,Cinema,Entertainment,Entretenimento
-26,Subscriptions,Assinaturas,Entertainment,Entretenimento
-27,Sports & Fitness,Esportes e Fitness,Entertainment,Entretenimento
-28,Hobbies,Hobbies,Entertainment,Entretenimento
-29,Travel & Vacations,Viagens e Férias,Entertainment,Entretenimento
-30,Haircuts & Beauty,Cortes de Cabelo e Beleza,Personal Care,Cuidados Pessoais
-31,Clothing,Roupas,Shopping,Compras
-32,Laundry & Dry Cleaning,Lavanderia e Lavagem a Seco,Personal Care,Cuidados Pessoais
-33,Credit Card Payments,Pagamentos de Cartão de Crédito,Debt Payments,Pagamentos de Dívidas
-34,Loan Payments,Pagamentos de Empréstimos,Debt Payments,Pagamentos de Dívidas
-35,Student Loans,Empréstimos Estudantis,Debt Payments,Pagamentos de Dívidas
-36,Emergency Fund,Fundo de Emergência,Investments,Investimentos
-37,Short-Term Goals,Objetivos de Curto Prazo,Investments,Investimentos
-38,Stock Market,Mercado de Ações,Investments,Investimentos
-39,Mutual Funds,Fundos Mútuos,Investments,Investimentos
-40,Cryptocurrency,Criptomoeda,Investments,Investimentos
-41,Real Estate,Imóveis,Investments,Investimentos
-42,Income Taxes,Imposto de Renda,Taxes,Impostos
-43,Property Taxes,Impostos sobre Propriedades,Taxes,Impostos
-44,Sales Taxes,Impostos sobre Vendas,Taxes,Impostos
-45,Business Taxes,Impostos Empresariais,Taxes,Impostos
-46,Charitable Donations,Doações de Caridade,Gifts,Presentes
-47,Birthday Gifts,Presentes de Aniversário,Gifts,Presentes
-48,Bank Fees,Taxas Bancárias,Fees & Charges,Taxas e Encargos
-49,Late Payment Fees,Multas por Atraso,Fees & Charges,Taxas e Encargos
-50,E-commerce,E-commerce,Shopping,Compras
-51,Bus,Ônibus,Transportation,Transporte
+category_id,category,category_pt,upper_category,upper_category_pt,is_essential,is_fixed
+-1,Unknown,Desconhecido,Unknown,Desconhecido,Not essential,Not fixed
+1,Groceries,Mercado,Food,Alimentação,Essential,Not fixed
+2,Restaurants,Restaurantes,Food,Alimentação,Not essential,Not fixed
+3,Coffee Shops,Cafeterias,Food,Alimentação,Not essential,Not fixed
+4,Fast Food,Comida Rápida,Food,Alimentação,Not essential,Not fixed
+5,Delivery Services,Serviços de Entrega,Food,Alimentação,Not essential,Not fixed
+6,Rent,Aluguel,Housing,Moradia,Essential,Fixed
+7,Mortgage,Hipoteca,Housing,Moradia,Essential,Fixed
+8,Property Taxes,Impostos sobre Propriedades,Housing,Moradia,Essential,Fixed
+9,Home Maintenance,Manutenção Residencial,Housing,Moradia,Essential,Not fixed
+10,Utilities,Serviços Públicos,Housing,Moradia,Not essential,Not fixed
+11,Fuel,Combustível,Transportation,Transporte,Not essential,Not fixed
+12,Public Transit,Transporte Público,Transportation,Transporte,Not essential,Not fixed
+13,Ride-Sharing,Carona,Transportation,Transporte,Not essential,Not fixed
+14,Vehicle Maintenance,Manutenção de Veículos,Transportation,Transporte,Not essential,Not fixed
+15,Parking,Estacionamento,Transportation,Transporte,Not essential,Not fixed
+16,Insurance Premiums,Prêmios de Seguro,Healthcare,Saúde,Not essential,Not fixed
+17,Doctor Visits,Consultas Médicas,Healthcare,Saúde,Essential,Not fixed
+18,Medications,Medicamentos,Healthcare,Saúde,Essential,Not fixed
+19,Dental Care,Cuidados Odontológicos,Healthcare,Saúde,Essential,Not fixed
+20,Vision Care,Cuidados com a Visão,Healthcare,Saúde,Essential,Not fixed
+21,Tuition,Mensalidades,Education,Educação,Not essential,Not fixed
+22,Books & Supplies,Livros e Materiais,Education,Educação,Not essential,Not fixed
+23,Online Courses,Cursos Online,Education,Educação,Not essential,Not fixed
+24,Childcare/Preschool,Cuidado Infantil/Pré-escola,Education,Educação,Not essential,Not fixed
+25,Movies,Cinema,Entertainment,Entretenimento,Not essential,Not fixed
+26,Subscriptions,Assinaturas,Entertainment,Entretenimento,Not essential,Fixed
+27,Sports & Fitness,Esportes e Fitness,Entertainment,Entretenimento,Not essential,Not fixed
+28,Hobbies,Hobbies,Entertainment,Entretenimento,Not essential,Not fixed
+29,Travel & Vacations,Viagens e Férias,Entertainment,Entretenimento,Not essential,Not fixed
+30,Haircuts & Beauty,Cortes de Cabelo e Beleza,Personal Care,Cuidados Pessoais,Not essential,Not fixed
+31,Clothing,Roupas,Shopping,Compras,Not essential,Not fixed
+32,Laundry & Dry Cleaning,Lavanderia e Lavagem a Seco,Personal Care,Cuidados Pessoais,Not essential,Not fixed
+33,Credit Card Payments,Pagamentos de Cartão de Crédito,Debt Payments,Pagamentos de Dívidas,Not essential,Not fixed
+34,Loan Payments,Pagamentos de Empréstimos,Debt Payments,Pagamentos de Dívidas,Not essential,Not fixed
+35,Student Loans,Empréstimos Estudantis,Debt Payments,Pagamentos de Dívidas,Not essential,Not fixed
+36,Emergency Fund,Fundo de Emergência,Investments,Investimentos,Not essential,Not fixed
+37,Short-Term Goals,Objetivos de Curto Prazo,Investments,Investimentos,Not essential,Not fixed
+38,Stock Market,Mercado de Ações,Investments,Investimentos,Not essential,Not fixed
+39,Mutual Funds,Fundos Mútuos,Investments,Investimentos,Not essential,Not fixed
+40,Cryptocurrency,Criptomoeda,Investments,Investimentos,Not essential,Not fixed
+41,Real Estate,Imóveis,Investments,Investimentos,Not essential,Not fixed
+42,Income Taxes,Imposto de Renda,Taxes,Impostos,Not essential,Not fixed
+43,Property Taxes,Impostos sobre Propriedades,Taxes,Impostos,Not essential,Not fixed
+44,Sales Taxes,Impostos sobre Vendas,Taxes,Impostos,Not essential,Not fixed
+45,Business Taxes,Impostos Empresariais,Taxes,Impostos,Not essential,Not fixed
+46,Charitable Donations,Doações de Caridade,Gifts,Presentes,Not essential,Not fixed
+47,Birthday Gifts,Presentes de Aniversário,Gifts,Presentes,Not essential,Not fixed
+48,Bank Fees,Taxas Bancárias,Fees & Charges,Taxas e Encargos,Not essential,Not fixed
+49,Late Payment Fees,Multas por Atraso,Fees & Charges,Taxas e Encargos,Not essential,Not fixed
+50,E-commerce,E-commerce,Shopping,Compras,Not essential,Not fixed
+51,Bus,Ônibus,Transportation,Transporte,Not essential,Not fixed
