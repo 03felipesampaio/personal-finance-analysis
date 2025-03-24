@@ -1,5 +1,7 @@
 external_files/
 dbt-env
+gha-creds-*.json
+_*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

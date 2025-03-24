@@ -3,6 +3,8 @@
         "ms-python.python",
         "bastienboutonnet.vscode-dbt",
         "charliermarsh.ruff",
-        "dorzey.vscode-sqlfluff"
+        "dorzey.vscode-sqlfluff",
+        "ms-azuretools.vscode-docker",
+        "sanjulaganepola.github-local-actions"
     ]
 }
