@@ -1,0 +1,63 @@
+name: 'Build and Deploy to Cloud Run'
+
+on:
+  push:
+    branches:
+      - '"main"'
+
+env:
+  PROJECT_ID: ${{ secrets.PROJECT_ID }}
+  REGION: ${{ secrets.PROJECT_REGION }}
+  SERVICE: ${{ secrets.PROJECT_SERVICE }}
+  DBT_DATASET: ${{ secrets.DBT_DATASET }}
+  # DBT_THREADS: 4
+  DBT_SECRET: ${{ secrets.DBT_SECRET }}
+
+jobs:
+  deploy:
+    runs-on: 'ubuntu-latest'
+
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+      - name: 'Checkout'
+        uses: 'actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332' # actions/checkout@v4
+
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@f112390a2df9932162083945e46d439060d66ec2' # google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}'
+
+      - id: 'secrets'
+        name: 'Get profiles.yml from Secret Manager'
+        uses: 'google-github-actions/get-secretmanager-secrets@v2'
+        with:
+          secrets: |-
+            token: ${{ env.DBT_SECRET }}
+
+      - name: 'Deploy to Cloud Run'
+        uses: 'google-github-actions/deploy-cloudrun@33553064113a37d688aa6937bacbdc481580be17' # google-github-actions/deploy-cloudrun@v2
+        with:
+          job: '${{ env.SERVICE }}'
+          region: '${{ env.REGION }}'
+          source: ./
+          env_vars: |-
+            PROJECT_ID=${{ env.PROJECT_ID }}
+            REGION=${{ env.PROJECT_REGION }}
+            SERVICE=${{ env.PROJECT_SERVICE }}
+            DBT_DATASET=${{ env.DBT_DATASET }}
+          secrets: |-
+            /root/.dbt/profiles.yml=${{ env.DBT_SECRET }}
+          # NOTE: If using a pre-built image, update the image name below:
+            # DBT_SECRET: ${{ secrets.DBT_SECRET }}
+            # DBT_SECRET=${{ steps.secrets.outputs.token }}
+
+      #     image: '${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}'
+      # # If required, use the Cloud Run URL output in later steps
+      # - name: 'Show output'
+      #   run: |2-
+
+      #     echo ${{ steps.deploy.outputs.url }}
