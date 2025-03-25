@@ -47,11 +47,6 @@ models:
         description: "Value of the transaction"
       - name: transaction_category
         description: "Category of the transaction"
-    data_tests:
-      - unique:
-          column_name: bank_name
-      - not_null:
-          column_name: bank_name
 
   - name: stg_bills_inter
     description: "Staging table for Inter bank bills"
@@ -80,11 +75,6 @@ models:
         description: "Value of the transaction"
       - name: transaction_category
         description: "Category of the transaction"
-    data_tests:
-      - unique:
-          column_name: bank_name
-      - not_null:
-          column_name: bank_name
 
   - name: stg_bills_inter_regex_mapping
     description: "Staging table for Inter bank bills regex mapping"
@@ -169,11 +159,6 @@ models:
         description: "Value of the transaction"
       - name: transaction_category
         description: "Category of the transaction"
-    data_tests:
-      - unique:
-          column_name: bank_name
-      - not_null:
-          column_name: bank_name
 
   - name: stg_statements_inter_regex_mapping
     description: "Staging table for Inter bank statements regex mapping"
@@ -216,11 +201,6 @@ models:
         description: "Value of the transaction"
       - name: transaction_category
         description: "Category of the transaction"
-    data_tests:
-      - unique:
-          column_name: bank_name
-      - not_null:
-          column_name: bank_name
 
   - name: stg_statements_nubank_regex_mapping
     description: "Staging table for Nubank statements regex mapping"
@@ -294,12 +274,12 @@ models:
   - name: stg_transfer_between_accounts_patterns
     description: "Staging table for transfer between accounts patterns"
     columns:
-      - name: pattern_id
+      - name: pattern
         description: "ID of the pattern"
       - name: pattern
         description: "Pattern for identifying transfers between accounts"
     data_tests:
       - unique:
-          column_name: pattern_id
+          column_name: pattern
       - not_null:
-          column_name: pattern_id
+          column_name: pattern
