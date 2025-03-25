@@ -54,3 +54,5 @@ seeds:
     +persist_docs:
       relation: true
       columns: true
+    +contract: 
+      enforced: true
