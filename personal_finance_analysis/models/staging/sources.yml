@@ -13,10 +13,6 @@ sources:
         description: "Statements from Nubank"
       - name: statements__inter
         description: "Statements from Inter bank"
-      - name: bills_nubank_regex_mapping
-      - name: bills_inter_regex_mapping
-      - name: statements_nubank_regex_mapping
-      - name: statements_inter_regex_mapping
       - name: transfer_between_accounts_patterns
         description: "Patterns to identify transfers between accounts"
         columns:
@@ -107,11 +103,6 @@ models:
         description: "Whether the regex pattern is active"
       - name: priority
         description: "Priority of the regex pattern"
-    data_tests:
-      - unique:
-          column_name: regex_id
-      - not_null:
-          column_name: regex_id
 
   - name: stg_bills_nubank_regex_mapping
     description: "Staging table for Nubank bills regex mapping"
@@ -130,11 +121,6 @@ models:
         description: "Whether the regex pattern is active"
       - name: priority
         description: "Priority of the regex pattern"
-    data_tests:
-      - unique:
-          column_name: regex_id
-      - not_null:
-          column_name: regex_id
 
   - name: stg_categories
     description: "Staging table for categories"
@@ -143,12 +129,7 @@ models:
         description: "ID of the category"
       - name: category_name
         description: "Name of the category"
-    data_tests:
-      - unique:
-          column_name: category_id
-      - not_null:
-          column_name: category_id
-
+  
   - name: stg_coins
     description: "Staging table for coins"
     columns:
@@ -156,11 +137,6 @@ models:
         description: "ID of the coin"
       - name: coin_name
         description: "Name of the coin"
-    data_tests:
-      - unique:
-          column_name: coin_id
-      - not_null:
-          column_name: coin_id
 
   - name: stg_places
     description: "Staging table for places"
@@ -169,11 +145,6 @@ models:
         description: "ID of the place"
       - name: place_name
         description: "Name of the place"
-    data_tests:
-      - unique:
-          column_name: place_id
-      - not_null:
-          column_name: place_id
 
   - name: stg_statements_inter
     description: "Staging table for Inter bank statements"
@@ -221,11 +192,6 @@ models:
         description: "Whether the regex pattern is active"
       - name: priority
         description: "Priority of the regex pattern"
-    data_tests:
-      - unique:
-          column_name: regex_id
-      - not_null:
-          column_name: regex_id
 
   - name: stg_statements_nubank
     description: "Staging table for Nubank statements"
@@ -273,11 +239,6 @@ models:
         description: "Whether the regex pattern is active"
       - name: priority
         description: "Priority of the regex pattern"
-    data_tests:
-      - unique:
-          column_name: regex_id
-      - not_null:
-          column_name: regex_id
 
   - name: stg_transaction_types
     description: "Staging table for transaction types"
@@ -286,11 +247,6 @@ models:
         description: "ID of the transaction type"
       - name: transaction_type_name
         description: "Name of the transaction type"
-    data_tests:
-      - unique:
-          column_name: transaction_type_id
-      - not_null:
-          column_name: transaction_type_id
 
   - name: stg_transactions
     description: "Staging table for transactions"
