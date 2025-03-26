@@ -34,7 +34,7 @@ WITH date_table AS (
 SELECT
     date_full,
     year,
-    quarter,
+    year_quarter,
     month,
     month_number,
     week_number,
