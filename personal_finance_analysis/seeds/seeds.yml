@@ -8,14 +8,24 @@ seeds:
           description: "Unique identifier for the category. It is a primary key and it needs to be incremented by the user."
           data_tests:
             - unique
+          constraints:
+            - type: not_null
         - name: category
           description: "Name of the category in English"
+          constraints:
+            - type: not_null
         - name: category_pt
           description: "Name of the category in Portuguese"
+          constraints:
+            - type: not_null
         - name: upper_category
           description: "Higher-level category in English"
+          constraints:
+            - type: not_null
         - name: upper_category_pt
           description: "Higher-level category in Portuguese"
+          constraints:
+            - type: not_null
 
     #- name: transfer_between_accounts_patterns
     #  description: "Patterns to identify transfers between accounts"
@@ -30,16 +40,28 @@ seeds:
           description: "Unique identifier for the regex pattern"
           data_tests:
             - unique
+          constraints:
+            - type: not_null
         - name: regex_pattern
           description: "Regular expression pattern to identify transactions"
+          constraints:
+            - type: not_null
         - name: place
           description: "Place associated with the transaction"
+          constraints:
+            - type: not_null
         - name: transaction_type
           description: "Type of transaction"
+          constraints:
+            - type: not_null
         - name: description
           description: "Description of the transaction"
+          constraints:
+            - type: not_null
         - name: active
           description: "Indicates if the pattern is active"
+          constraints:
+            - type: not_null
         - name: priority
           description: "Priority of the pattern"
         - name: insertion_time
@@ -56,16 +78,28 @@ seeds:
           description: "Unique identifier for the regex pattern"
           data_tests:
             - unique
+          constraints:
+            - type: not_null
         - name: regex_pattern
           description: "Regular expression pattern to identify transactions"
+          constraints:
+            - type: not_null
         - name: place
           description: "Place associated with the transaction"
+          constraints:
+            - type: not_null
         - name: transaction_type
           description: "Type of transaction"
+          constraints:
+            - type: not_null
         - name: description
           description: "Description of the transaction"
+          constraints:
+            - type: not_null
         - name: active
           description: "Indicates if the pattern is active"
+          constraints:
+            - type: not_null
         - name: priority
           description: "Priority of the pattern"
         - name: insertion_time
@@ -82,18 +116,32 @@ seeds:
           description: "Unique identifier for the coin"
           data_tests:
             - unique
+          constraints:
+            - type: not_null
         - name: coin_code
           description: "Code of the coin"
+          constraints:
+            - type: not_null
         - name: coin_name
           description: "Name of the coin"
+          constraints:
+            - type: not_null
         - name: coin_symbol
           description: "Symbol of the coin"
+          constraints:
+            - type: not_null
         - name: coin_type
           description: "Type of the coin (e.g., Fiat, Cryptocurrency)"
+          constraints:
+            - type: not_null
         - name: thousands_separator
           description: "Thousands separator used for the coin"
+          constraints:
+            - type: not_null
         - name: decimal_separator
           description: "Decimal separator used for the coin"
+          constraints:
+            - type: not_null
 
     - name: places
       description: "Information about different places"
@@ -102,12 +150,20 @@ seeds:
           description: "Unique identifier for the place"
           data_tests:
             - unique
+          constraints:
+            - type: not_null
         - name: place
           description: "Name of the place"
+          constraints:
+            - type: not_null
         - name: is_online
           description: "Indicates if the place is online or physical"
+          constraints:
+            - type: not_null
         - name: category
           description: "Category of the place"
+          constraints:
+            - type: not_null
 
     - name: statements_inter_regex_mapping
       description: "Regex patterns for mapping Inter bank statements"
@@ -116,16 +172,28 @@ seeds:
           description: "Unique identifier for the regex pattern"
           data_tests:
             - unique
+          constraints:
+            - type: not_null
         - name: regex_pattern
           description: "Regular expression pattern to identify transactions"
+          constraints:
+            - type: not_null
         - name: place
           description: "Place associated with the transaction"
+          constraints:
+            - type: not_null
         - name: transaction_type
           description: "Type of transaction"
+          constraints:
+            - type: not_null
         - name: description
           description: "Description of the transaction"
+          constraints:
+            - type: not_null
         - name: active
           description: "Indicates if the pattern is active"
+          constraints:
+            - type: not_null
         - name: priority
           description: "Priority of the pattern"
         - name: insertion_time
@@ -142,16 +210,28 @@ seeds:
           description: "Unique identifier for the regex pattern"
           data_tests:
             - unique
+          constraints:
+            - type: not_null
         - name: regex_pattern
           description: "Regular expression pattern to identify transactions"
+          constraints:
+            - type: not_null
         - name: place
           description: "Place associated with the transaction"
+          constraints:
+            - type: not_null
         - name: transaction_type
           description: "Type of transaction"
+          constraints:
+            - type: not_null
         - name: description
           description: "Description of the transaction"
+          constraints:
+            - type: not_null
         - name: active
           description: "Indicates if the pattern is active"
+          constraints:
+            - type: not_null
         - name: priority
           description: "Priority of the pattern"
         - name: insertion_time
@@ -168,7 +248,13 @@ seeds:
           description: "Unique identifier for the transaction type"
           data_tests:
             - unique
+          constraints:
+            - type: not_null
         - name: type_description
           description: "Description of the transaction type in English"
+          constraints:
+            - type: not_null
         - name: type_description_pt
           description: "Description of the transaction type in Portuguese"
+          constraints:
+            - type: not_null

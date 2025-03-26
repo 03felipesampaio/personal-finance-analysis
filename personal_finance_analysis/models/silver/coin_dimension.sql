@@ -5,7 +5,7 @@
 ) }}
 
 with source as (
-    select  
+    select
         coin_id,
         coin_code,
         coin_name,
@@ -13,8 +13,9 @@ with source as (
         coin_type,
         thousands_separator,
         decimal_separator,
-        current_datetime() AS inserted_at,
-        current_datetime() AS updated_at,
+        current_datetime() as inserted_at,
+        current_datetime() as updated_at
     from {{ ref("stg_coins") }}
 )
+
 select * from source

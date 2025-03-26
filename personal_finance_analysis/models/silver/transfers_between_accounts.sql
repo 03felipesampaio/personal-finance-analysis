@@ -1,6 +1,6 @@
 {{ config(
     materialized='incremental',
-    unique_key='transaction_id',
+    unique_key='transfer_id',
     merge_exclude_columns = ['inserted_at']
 ) }}
 

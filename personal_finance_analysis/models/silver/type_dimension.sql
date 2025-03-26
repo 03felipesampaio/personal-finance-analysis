@@ -5,10 +5,13 @@
 ) }}
 
 with source as (
-    select 
-        *,
-        current_datetime() AS inserted_at,
-        current_datetime() AS updated_at,
+    select
+        type_id,
+        type_description,
+        type_description_pt,
+        current_datetime() as inserted_at,
+        current_datetime() as updated_at
     from {{ ref("stg_transaction_types") }}
 )
+
 select * from source

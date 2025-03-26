@@ -1,36 +1,21 @@
--- depends_on: {{ ref('stg_bills__nubank') }}
+{{
+  config(
+    materialized = 'incremental',
+    unique_key = 'description',
+    merge_exclude_columns = ['inserted_at']
+    )
+}}
 
-with bills_nubank as (
-    select distinct
-        ABS(FARM_FINGERPRINT(transaction_description)) as description_id,
-        transaction_description as description
-    from {{ ref("slv_bills_nubank") }}
-),
-bills_inter as (
-    select distinct
-        ABS(FARM_FINGERPRINT(transaction_description)) as description_id,
-        transaction_description as description
-    from {{ ref("slv_bills_inter") }}
-),
-statements_nubank as (
-    select distinct
-        ABS(FARM_FINGERPRINT(transaction_description)) as description_id,
-        transaction_description as description
-    from {{ ref("slv_statements_nubank") }}
-),
-statements_inter as (
-    select distinct
-        ABS(FARM_FINGERPRINT(transaction_description)) as description_id,
-        transaction_description as description
-    from {{ ref("slv_statements_inter") }}
-),
-all_sources as (
-    select * from bills_nubank
-    union all
-    select * from bills_inter
-    union all
-    select * from statements_nubank
-    union all
-    select * from statements_inter
+with source as (
+    select
+        transaction_description as description,
+        ABS(FARM_FINGERPRINT(transaction_description)) as description_id
+    from {{ ref("stg_transactions") }}
 )
-select distinct * from all_sources
+
+select distinct
+    description_id,
+    description,
+    CURRENT_DATETIME() as inserted_at,
+    CURRENT_DATETIME() as updated_at
+from source
