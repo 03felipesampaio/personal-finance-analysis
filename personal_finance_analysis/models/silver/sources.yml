@@ -31,6 +31,8 @@ models:
           data_type: integer
           constraints:
             - type: not_null
+          data_tests:
+            - unique
         - name: category
           description: "Name of the category in English"
           data_type: string
@@ -74,6 +76,8 @@ models:
           data_type: integer
           constraints:
             - type: not_null
+          data_tests:
+            - unique
         - name: coin_code
           description: "Code of the coin"
           data_type: string
@@ -127,12 +131,14 @@ models:
           data_type: date
           constraints:
             - type: not_null
+          data_tests:
+            - unique
         - name: year
           description: "Year"
           data_type: integer
           constraints:
             - type: not_null
-        - name: quarter
+        - name: year_quarter
           description: "Quarter"
           data_type: string
           constraints:
@@ -185,6 +191,8 @@ models:
           data_type: integer
           constraints:
             - type: not_null
+          data_tests:
+            - unique
         - name: description
           description: "Description text"
           data_type: string
@@ -203,6 +211,8 @@ models:
           data_type: integer
           constraints:
             - type: not_null
+          data_tests:
+            - unique
         - name: place
           description: "Name of the place"
           data_type: string
@@ -239,10 +249,6 @@ models:
 
     - name: slv_bills_inter
       description: "Silver model for Inter bank bills"
-      constraints:
-        - type: primary_key
-          warn_unenforced: false
-          columns: [source_id]
       columns:
         - name: source_id
           description: "Unique identifier for the source"
@@ -347,6 +353,8 @@ models:
           data_type: integer
           constraints:
             - type: not_null
+          data_tests:
+            - unique
         - name: regex_pattern
           description: "Regular expression pattern to identify transactions"
           data_type: string
@@ -386,10 +394,6 @@ models:
 
     - name: slv_bills_nubank
       description: "Silver model for Nubank bills"
-      constraints:
-        - type: primary_key
-          warn_unenforced: false
-          columns: [source_id]
       columns:
         - name: source_id
           description: "Unique identifier for the source"
@@ -494,6 +498,8 @@ models:
           data_type: integer
           constraints:
             - type: not_null
+          data_tests:
+            - unique
         - name: regex_pattern
           description: "Regular expression pattern to identify transactions"
           data_type: string
@@ -534,16 +540,12 @@ models:
     # TODO: Fill this model
     - name: slv_statements_nubank
       description: "Silver model for Nubank statements"
-      constraints:
-      - type: primary_key
-        warn_unenforced: false
-        columns: [source_id]
       columns:
       - name: source_id
         description: "Unique identifier for the source"
         data_type: integer
         constraints:
-        - type: not_null
+          - type: not_null
       - name: bank_name
         description: "Name of the bank"
         data_type: string
@@ -632,6 +634,8 @@ models:
           data_type: integer
           constraints:
             - type: not_null
+          data_tests:
+            - unique
         - name: regex_pattern
           description: "Regular expression pattern to identify transactions"
           data_type: string
@@ -771,6 +775,8 @@ models:
           data_type: integer
           constraints:
             - type: not_null
+          data_tests:
+            - unique
         - name: regex_pattern
           description: "Regular expression pattern to identify transactions"
           data_type: string
@@ -820,6 +826,8 @@ models:
           data_type: integer
           constraints:
             - type: not_null
+          data_tests:
+            - unique
         - name: bank_name
           description: "Name of the bank"
           data_type: string
@@ -862,6 +870,8 @@ models:
           data_type: integer
           constraints:
             - type: not_null
+          data_tests:
+            - unique
         - name: transaction_date
           description: "Date of the transaction"
           data_type: date
@@ -935,6 +945,8 @@ models:
           data_type: integer
           constraints:
             - type: not_null
+          data_tests:
+            - unique
         - name: out_transaction_id
           description: "Transaction ID for the outgoing transfer"
           data_type: integer
@@ -964,6 +976,8 @@ models:
           data_type: integer
           constraints:
             - type: not_null
+          data_tests:
+            - unique
         - name: type_description
           description: "Description of the transaction type in English"
           data_type: string

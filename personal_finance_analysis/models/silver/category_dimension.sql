@@ -7,14 +7,15 @@
 }}
 
 with source as (
-    select 
+    select
         category_id,
         category,
         category_pt,
         upper_category,
         upper_category_pt,
-        current_datetime() AS inserted_at,
-        current_datetime() AS updated_at
+        current_datetime() as inserted_at,
+        current_datetime() as updated_at
     from {{ ref("stg_categories") }}
 )
+
 select * from source
