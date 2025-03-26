@@ -243,6 +243,8 @@ models:
               field: transaction_type_id
       - name: description_id
         description: "ID of the transaction description"
+      - name: transaction_description
+        description: "Description of the transaction"
       - name: place_id
         description: "ID of the place"
         data_tests:

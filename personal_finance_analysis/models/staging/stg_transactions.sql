@@ -4,17 +4,17 @@
 
 with bills_nubank as (
   select 
-    bank_name,
-    source_type,
-    bill_start_date as source_start,
-    bill_end_date as source_end,
+    bill.bank_name,
+    bill.source_type,
+    bill.bill_start_date as source_start,
+    bill.bill_end_date as source_end,
 
     bill.transaction_type,
 
-    transaction_date,
-    transaction_description,
-    transaction_category,
-    transaction_value * -1 as amount,
+    bill.transaction_date,
+    bill.transaction_description,
+    bill.transaction_category,
+    bill.transaction_value * -1 as amount,
 
     coalesce(mapping_nubank_regex_bills.place_id, -1) as place_id,
 
@@ -26,17 +26,17 @@ with bills_nubank as (
 ),
 bills_inter as (
   select 
-    bank_name,
-    source_type,
-    bill_start_date as source_start,
-    bill_end_date as source_end,
+    bill.bank_name,
+    bill.source_type,
+    bill.bill_start_date as source_start,
+    bill.bill_end_date as source_end,
 
     bill.transaction_type,
 
-    transaction_date,
-    transaction_description,
-    transaction_category,
-    transaction_value * -1 as amount,
+    bill.transaction_date,
+    bill.transaction_description,
+    bill.transaction_category,
+    bill.transaction_value * -1 as amount,
 
     coalesce(mapping_inter_regex_bills.place_id, -1) as place_id,
 
@@ -64,7 +64,8 @@ statements_nubank as (
 
 
   from {{ ref('stg_statements_nubank') }} as statement
-  left join {{ ref('slv_statements_nubank_regex_mapping') }} as mapping_nubank_regex_statement
+  left join {{ ref('slv_statements_nubank_regex_mapping') }} 
+    as mapping_nubank_regex_statement
     on regexp_contains(transaction_description, regex_pattern)
       and mapping_nubank_regex_statement.active = true
 ),
@@ -86,7 +87,8 @@ statements_inter as (
 
 
   from {{ ref('stg_statements_inter') }} as statement
-  left join {{ ref('slv_statements_inter_regex_mapping') }} as mapping_inter_regex_statement
+  left join {{ ref('slv_statements_inter_regex_mapping') }} 
+    as mapping_inter_regex_statement
     on regexp_contains(transaction_description, regex_pattern)
       and mapping_inter_regex_statement.active = true
 ),
@@ -101,9 +103,11 @@ transactions_without_dimensions_and_fact_ids as (
 ),
 transactions_without_fact_ids as (
   select
-    abs(farm_fingerprint(CONCAT(bank_name, source_type, source_start, source_end))) AS source_id,
+    abs(farm_fingerprint(
+      concat(bank_name, source_type, source_start, source_end))) AS source_id,
     coalesce(type_dimension.type_id, -1) as type_id,
     abs(farm_fingerprint(transaction_description)) description_id,
+    transaction_description,
     transactions_without_dimensions_and_fact_ids.place_id,
     coalesce(transaction_category, place_dimension.category_id, -1) as category_id,
     transaction_date,
@@ -112,9 +116,11 @@ transactions_without_fact_ids as (
 
     from transactions_without_dimensions_and_fact_ids
     left join {{ ref('type_dimension') }} as type_dimension
-        on transactions_without_dimensions_and_fact_ids.transaction_type = type_dimension.type_description
+        on transactions_without_dimensions_and_fact_ids.transaction_type 
+          = type_dimension.type_description
     left join {{ ref('place_dimension') }} as place_dimension
-        on place_dimension.place_id = transactions_without_dimensions_and_fact_ids.place_id
+        on place_dimension.place_id = 
+          transactions_without_dimensions_and_fact_ids.place_id
     join {{ ref('coin_dimension') }} as coin_dimension on coin_dimension.coin_code = 'BRL'
 ),
 transactions as (

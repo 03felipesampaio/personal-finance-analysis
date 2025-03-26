@@ -5,7 +5,7 @@ sources as (
         description,
         inserted_at,
         updated_at
-    from {{ ref('dim_description') }}
+    from {{ ref('description_dimension') }}
 )
 
 select distinct * from sources
