@@ -1,3 +1,11 @@
+{{
+  config(
+    materialized = 'incremental',
+    unique_key = 'description',
+    merge_exclude_columns = ['inserted_at']
+    )
+}}
+
 with source as (
     select
         transaction_description as description,
@@ -7,5 +15,7 @@ with source as (
 
 select distinct
     description_id,
-    description
+    description,
+    CURRENT_DATETIME() as inserted_at,
+    CURRENT_DATETIME() as updated_at
 from source
