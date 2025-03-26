@@ -16,7 +16,7 @@ with source as (
     from {{ ref("stg_places") }} as places
     left join
         {{ ref("stg_categories") }} as categories
-        on stg_places.category = stg_categories.category
+        on places.category = categories.category
 )
 
 select * from source
