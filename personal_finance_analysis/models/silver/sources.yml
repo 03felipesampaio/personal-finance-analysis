@@ -198,6 +198,16 @@ models:
           data_type: string
           constraints:
             - type: not_null
+        - name: inserted_at
+          description: "Timestamp when the record was inserted"
+          data_type: datetime
+          constraints:
+            - type: not_null
+        - name: updated_at
+          description: "Timestamp when the record was last updated"
+          data_type: datetime
+          constraints:
+            - type: not_null
 
     - name: place_dimension
       description: "Dimension table for places where transactions occur"
