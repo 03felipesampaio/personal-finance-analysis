@@ -31,7 +31,7 @@ nubank_statements_source as (
         statement_end_date as source_end,
         CAST(NULL as date) as bill_date,
         CAST(NULL as numeric) as bill_amount
-    from {{ ref("slv_statements_nubank") }}
+    from {{ ref("stg_statements_nubank") }}
 ),
 
 inter_statements_source as (
@@ -43,7 +43,7 @@ inter_statements_source as (
         statement_end_date as source_end,
         CAST(NULL as date) as bill_date,
         CAST(NULL as numeric) as bill_amount
-    from {{ ref("slv_statements_inter") }}
+    from {{ ref("stg_statements_inter") }}
 ),
 
 all_sources as (
