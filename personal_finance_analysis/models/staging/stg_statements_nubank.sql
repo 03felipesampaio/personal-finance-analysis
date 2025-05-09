@@ -1,35 +1,57 @@
 with source as (
-    select 
-        bank_name,
+    select
+        statements.bank_name,
         'Bank Statement' as source_type,
-        statement_account_id,
-        statement_start_date,
-        statement_end_date,
-        transaction_date,
+        statements.statement_account_id,
+        statements.statement_start_date,
+        statements.statement_end_date,
+        statements.transaction_date,
+        statements.transaction_description,
+        'BRL' as coin_code,
+        statements.transaction_value,
+        statements.transaction_category,
         case
-            when transaction_description like 'Cashback %' then 'Cashback'
-            when transaction_description = 'Depósito Recebido por Boleto' then 'Deposit'
-            when transaction_description like 'Estorno %' then 'Refund'
-            when transaction_description like 'Reembolso recebido pelo Pix %' then 'Refund'
-            when transaction_description like 'Débito automático -%' then 'Automatic debit'
-            when transaction_description = 'Pagamento da fatura - Cartão Nubank' then 'Bill payment'
-            when transaction_description = 'Pagamento de fatura' then 'Bill payment'
-            when transaction_description like 'Pagamento de boleto efetuado %' then 'Payment slip'
+            when statements.transaction_description like 'Cashback %' then 'Cashback'
+            when
+                statements.transaction_description = 'Depósito Recebido por Boleto'
+                then 'Deposit'
+            when statements.transaction_description like 'Estorno %' then 'Refund'
+            when
+                statements.transaction_description like 'Reembolso recebido pelo Pix %'
+                then 'Refund'
+            when
+                statements.transaction_description like 'Débito automático -%'
+                then 'Automatic debit'
+            when
+                statements.transaction_description = 'Pagamento da fatura - Cartão Nubank'
+                then 'Bill payment'
+            when
+                statements.transaction_description = 'Pagamento de fatura'
+                then 'Bill payment'
+            when
+                statements.transaction_description like 'Pagamento de boleto efetuado %'
+                then 'Payment slip'
 
             -- Tranfers between accounts are stored separately
             when pattern is not null then 'Transfer between accounts'
 
-            when transaction_description like 'Transferência Recebida - %' then 'Transfer received'
-            when transaction_description like 'Transferência enviada - %' then 'Tranfer sent'
-            when transaction_description like 'Transferência enviada pelo Pix - %' then 'Pix sent'
-            when transaction_description like 'Transferência recebida pelo Pix - %' then 'Pix received'
+            when
+                statements.transaction_description like 'Transferência Recebida - %'
+                then 'Transfer received'
+            when
+                statements.transaction_description like 'Transferência enviada - %'
+                then 'Tranfer sent'
+            when
+                statements.transaction_description like 'Transferência enviada pelo Pix - %'
+                then 'Pix sent'
+            when
+                statements.transaction_description like 'Transferência recebida pelo Pix - %'
+                then 'Pix received'
             else 'Debit card' end
-        as transaction_type,
-        transaction_description,
-        transaction_value,
-        transaction_category 
-    from {{ source('bronze', 'statements__nubank') }}
-    left join {{ ref('stg_transfer_between_accounts_patterns') }}
-        on regexp_contains(transaction_description, pattern)
+            as transaction_type
+    from {{ source('bronze', 'statements__nubank') }} as statements
+    left join {{ ref('stg_transfer_between_accounts_patterns') }} as p
+        on regexp_contains(statements.transaction_description, p.pattern)
 )
+
 select * from source
