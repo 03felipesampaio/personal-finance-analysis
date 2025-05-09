@@ -36,8 +36,6 @@ models:
       # +enabled: true
       +materialized: view
       +schema: expenses_tracker_stg
-      +contract: 
-        enforced: false
     silver:
       +enabled: true
       +materialized: table
@@ -45,9 +43,10 @@ models:
     gold:
       +materialized: view
       +schema: expenses_tracker_gold
+
+      +contract: 
+        enforced: true
     
-    +contract: 
-      enforced: true
     +persist_docs:
       relation: true
       columns: true
