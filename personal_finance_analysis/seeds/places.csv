@@ -1,4 +1,5 @@
 place_id,place,is_online,category
+-2,Not apply,Unknown,Unknown
 -1,Unknown,Unknown,Unknown
 1,Aliexpress,Online,E-commerce
 2,Ifood,Online,Delivery Services
