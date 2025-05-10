@@ -1,12 +1,13 @@
 regex_id,regex_pattern,place,description,priority
 uber_1,Uber\b,Uber,Purchases at Uber,1
-99_app_1,99(\* Pop|[Aa]pp),99App,Rides with 99 App,1
+99_app_1,99(\* Pop|[Aa]pp),99Taxis,Rides with 99 App,1
 amazon_1,Amazon(\b|-|\.),Amazon,Purchases at Amazon,1
 aliexpress_1,Aliexpress|Alipay,Aliexpress,Purchases at Aliexpress,1
 ifood_1,Ifood|Ifd,Ifood,Purchases at Ifood,1
 nubank_1,Nubank,Nubank,Payments to Nubank,1
 gol_1,Gol\b,Gol,Flights with Gol,1
 azul_1,Azul\b,Azul,Flights with Azul,1
+latam_1,Latam\b,Latam,Flights with Latam,1
 clickbus_1,Click[bB]us|BUS SERVICOS DE AGENDAMENTO SA,Clickbus,Purchases at Clickbus,1
 jau_serve_1,(?i:Jau Serve (Loja|Lj)),Jau Serve,Purchases at Jau Serve supermarket,1
 hbo_max_1,Hbomaxassin,HBO Max,Payments to HBO Max,1
@@ -14,11 +15,22 @@ youtube_1,Google Youtub,Youtube,Payments to Youtube,1
 amazon_prime_1,Amazonprimebr,Amazon Prime,Signature at Amazon Prime,1
 microsoft_gamepass_1,Microsoft\*Subscription,Microsoft Gamepass,Payments to Microsoft Gamepass,1
 mercado_livre_plus_1,Melimais,Mercado Livre Plus,Purchases at Mercado Livre,1
-totalpass_1,Totalpass,Total Pass,Payments to Total Pass,1
+mercado_livre_plus_2,Nivel6,Mercado Livre Plus,Purchases at Mercado Livre,1
+totalpass_1,Totalpass,TotalPass,Payments to Total Pass,1
 clube_wine_1,Clubew|ClubeWine,Clube Wine,Purchases at Clube Wine,1
-imobiliaria_portal_1,PORTAL IMOVEIS SAO CARLOS LTDA,Imobiliaria Portal,Purchases at Imobiliaria Portal,1
+imobiliaria_portal_1,PORTAL IMOVEIS,Imobiliaria Portal,Purchases at Imobiliaria Portal,1
+imobiliaria_portal_2,ESSIO GATTI JUNIOR,Imobiliaria Portal,Purchases at Imobiliaria Portal,1
 cpfl_1,CPFL PAULISTA|COMPANHIA PAULISTA DE FORCA E LUZ,CPFL,Payments to CPFL,1
 consultoria_futuro_1,Futuro Gestao Fina,Consultoria Futuro,Purchases at Consultoria Futuro,1
-lanchonete_serasa_1,(?i:Serasa Lanch),Lanchonete Serasa,Purchases at Lanchonete Serasa,1
-tempero_arte_1,HIDEO KAWAKANI SAO CARLOS BRA,Restaurante Tempero Arte,Purchases at Tempero Arte,1
-injoy_burguer_1,Injoyburger,Injoy Burguer,Purchases at Injoy Burguer,1
+lanchonete_serasa_1,(?i:Serasa Lanch),Restaurante Serasa,Purchases at Restaurante Serasa,1
+tempero_arte_1,(?i:HIDEO KAWAKANI)( SAO CARLOS BRA)?,Restaurante Tempero Arte,Purchases at Tempero Arte,1
+injoy_burguer_1,(?i:Injoyburguer|Injoyburger),Injoy Burguer,Purchases at Injoy Burguer,1
+avalanche_1,Avalanche - Loja,Lanchonete Avalanche,Payments to Avalanche,1
+kamzu_,(?i:Kamzu),Kamzu,Purchases at Kamzu,1
+savegnago_1,Savegnago,Savegnago,Purchases at Savegnago,1
+ritorno_1,Ritorno,Pizzaria Ritorno,Purchases at Ritorno,1
+hering_1,Hering,Hering,Purchases at Hering,1
+shopee_1,Shopee,Shopee,Purchases at Shopee,1
+extra_1,Extra Com,Extra,Purchases at Extra,1
+montecarlo_1,Montecarlo,Monte Carlo,Purchases at Monte Carlo,1
+magalu_1,Magazineluiza,Magazine Luiza,Purchases at Magazine Luiza,1

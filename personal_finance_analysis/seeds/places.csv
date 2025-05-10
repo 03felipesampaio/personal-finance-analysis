@@ -1,5 +1,5 @@
 place_id,place,is_online,category
--2,Not apply,Unknown,Unknown
+-2,Not apply,Unknown,Not apply
 -1,Unknown,Unknown,Unknown
 1,Aliexpress,Online,E-commerce
 2,Ifood,Online,Delivery Services
@@ -12,7 +12,7 @@ place_id,place,is_online,category
 9,Shopee,Online,E-commerce
 10,Youtube,Online,Subscriptions
 11,HBO Max,Online,Subscriptions
-12,Jau Serve Loja,Physical,Groceries
+12,Jau Serve,Physical,Groceries
 13,Gol,Online,Travel & Vacations
 14,Hering,Online,Clothing
 15,Latam,Online,Travel & Vacations
@@ -38,3 +38,17 @@ place_id,place,is_online,category
 35,Carrefour,Physical,Groceries
 36,Futuro Gestao Financeira,Online,Finance
 37,Atelier Ana Celia,Physical,Clothing
+38,TotalPass,Online,Gym and Fitness
+39,Microsoft Gamepass,Online,Subscriptions
+40,Mercado Livre Plus,Online,Subscriptions
+41,Clube Wine,Online,Subscriptions
+42,Restaurante Tempero Arte,Physical,Restaurants
+43,Consultoria Futuro,Online,Finance
+44,Injoy Burguer,Physical,Restaurants
+45,Imobiliaria Portal,Physical,Rent
+46,Restaurante Serasa,Physical,Restaurants
+47,CPFL,Online,Utilities
+48,Lanchonete Avalanche,Physical,Restaurants
+49,Kamzu,Physical,Restaurants
+50,Savegnago,Physical,Groceries
+51,Pizzaria Ritorno,Physical,Restaurants

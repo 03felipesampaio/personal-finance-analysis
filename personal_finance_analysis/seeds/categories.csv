@@ -1,4 +1,5 @@
 category_id,category,category_pt,upper_category,upper_category_pt
+-2,Not apply,Não se aplica,Not apply,Não se aplica
 -1,Unknown,Desconhecido,Unknown,Desconhecido
 1,Groceries,Mercado,Food,Alimentação
 2,Restaurants,Restaurantes,Food,Alimentação
@@ -51,3 +52,4 @@ category_id,category,category_pt,upper_category,upper_category_pt
 49,Late Payment Fees,Multas por Atraso,Fees & Charges,Taxas e Encargos
 50,E-commerce,E-commerce,Shopping,Compras
 51,Bus,Ônibus,Transportation,Transporte
+52,Gym and Fitness,Ginásio e Fitness,Healthcare,Saúde
