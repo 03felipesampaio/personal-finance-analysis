@@ -33,6 +33,29 @@ seeds:
     #    - name: pattern
     #      description: "Regular expression pattern to identify transfer transactions"
 
+    - name: description_patterns
+      description: "Patterns for identifying descriptions in transactions"
+      columns:
+        - name: regex_id
+          description: "Unique identifier for the regex pattern"
+          data_tests:
+            - unique
+          constraints:
+            - type: not_null
+        - name: regex_pattern
+          description: "Regular expression pattern to identify descriptions"
+          constraints:
+            - type: not_null
+        - name: place
+          description: "Place associated with the description"
+          constraints:
+            - type: not_null
+        - name: description
+          description: "Description of the pattern"
+        - name: priority
+          description: "Priority of the pattern"
+
+
     - name: bills_inter_regex_mapping
       description: "Regex patterns for mapping Inter bank bills"
       columns:

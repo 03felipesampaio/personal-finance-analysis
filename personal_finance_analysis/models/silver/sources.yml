@@ -257,539 +257,106 @@ models:
           description: "Transaction ID for the refund"
           data_type: integer
 
-    - name: slv_bills_inter
-      description: "Silver model for Inter bank bills"
-      columns:
-        - name: source_id
-          description: "Unique identifier for the source"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: bank_name
-          description: "Name of the bank"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: source_type
-          description: "Type of the source"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: bill_date
-          description: "Date of the bill"
-          data_type: date
-          constraints:
-            - type: not_null
-        - name: bill_reference_month
-          description: "Reference month of the bill"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: bill_value
-          description: "Value of the bill"
-          data_type: numeric
-          constraints:
-            - type: not_null
-        - name: bill_start_date
-          description: "Start date of the bill"
-          data_type: date
-          constraints:
-            - type: not_null
-        - name: bill_end_date
-          description: "End date of the bill"
-          data_type: date
-          constraints:
-            - type: not_null
-        - name: transaction_date
-          description: "Date of the transaction"
-          data_type: date
-          constraints:
-            - type: not_null
-        - name: type_id
-          description: "Type ID of the transaction"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: transaction_type
-          description: "Type of the transaction"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: description_id
-          description: "Description ID of the transaction"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: transaction_description
-          description: "Description of the transaction"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: place_id
-          description: "Place ID associated with the transaction"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: category_id
-          description: "Category ID associated with the transaction"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: coin_id
-          description: "Coin ID associated with the transaction"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: coin_symbol
-          description: "Symbol of the coin"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: transaction_value
-          description: "Value of the transaction"
-          data_type: numeric
-          constraints:
-            - type: not_null
 
-    - name: slv_bills_inter_regex_mapping
-      description: "Silver model for Inter bank bills regex mapping"
-      constraints:
-        - type: primary_key
-          warn_unenforced: false
-          columns: [regex_id]
-      columns:
-        - name: regex_id
-          description: "Unique identifier for the regex pattern"
-          data_type: integer
-          constraints:
-            - type: not_null
-          data_tests:
-            - unique
-        - name: regex_pattern
-          description: "Regular expression pattern to identify transactions"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: place_id
-          description: "Place ID associated with the transaction"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: transaction_type
-          description: "Type of transaction"
-          data_type: integer
-        - name: description
-          description: "Description of the transaction"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: active
-          description: "Indicates if the pattern is active"
-          data_type: boolean
-          constraints:
-            - type: not_null
-        - name: priority
-          description: "Priority of the pattern"
-          data_type: integer
-        - name: inserted_at
-          description: "Timestamp when the record was inserted"
-          data_type: datetime
-          constraints:
-            - type: not_null
-        - name: updated_at
-          description: "Timestamp when the record was last updated"
-          data_type: datetime
-          constraints:
-            - type: not_null
-
-    - name: slv_bills_nubank
-      description: "Silver model for Nubank bills"
-      columns:
-        - name: source_id
-          description: "Unique identifier for the source"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: bank_name
-          description: "Name of the bank"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: source_type
-          description: "Type of the source"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: bill_date
-          description: "Date of the bill"
-          data_type: date
-          constraints:
-            - type: not_null
-        - name: bill_reference_month
-          description: "Reference month of the bill"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: bill_value
-          description: "Value of the bill"
-          data_type: numeric
-          constraints:
-            - type: not_null
-        - name: bill_start_date
-          description: "Start date of the bill"
-          data_type: date
-          constraints:
-            - type: not_null
-        - name: bill_end_date
-          description: "End date of the bill"
-          data_type: date
-          constraints:
-            - type: not_null
-        - name: transaction_date
-          description: "Date of the transaction"
-          data_type: date
-          constraints:
-            - type: not_null
-        - name: type_id
-          description: "Type ID of the transaction"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: transaction_type
-          description: "Type of the transaction"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: description_id
-          description: "Description ID of the transaction"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: transaction_description
-          description: "Description of the transaction"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: place_id
-          description: "Place ID associated with the transaction"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: category_id
-          description: "Category ID associated with the transaction"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: coin_id
-          description: "Coin ID associated with the transaction"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: coin_symbol
-          description: "Symbol of the coin"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: transaction_value
-          description: "Value of the transaction"
-          data_type: numeric
-          constraints:
-            - type: not_null
-
-    - name: slv_bills_nubank_regex_mapping
-      description: "Silver model for Nubank bills regex mapping"
-      constraints:
-        - type: primary_key
-          warn_unenforced: false
-          columns: [regex_id]
-      columns:
-        - name: regex_id
-          description: "Unique identifier for the regex pattern"
-          data_type: integer
-          constraints:
-            - type: not_null
-          data_tests:
-            - unique
-        - name: regex_pattern
-          description: "Regular expression pattern to identify transactions"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: place_id
-          description: "Place ID associated with the transaction"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: transaction_type
-          description: "Type of transaction"
-          data_type: integer
-        - name: description
-          description: "Description of the transaction"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: active
-          description: "Indicates if the pattern is active"
-          data_type: boolean
-          constraints:
-            - type: not_null
-        - name: priority
-          description: "Priority of the pattern"
-          data_type: integer
-        - name: inserted_at
-          description: "Timestamp when the record was inserted"
-          data_type: datetime
-          constraints:
-            - type: not_null
-        - name: updated_at
-          description: "Timestamp when the record was last updated"
-          data_type: datetime
-          constraints:
-            - type: not_null
-
-    # TODO: Fill this model
-    - name: slv_statements_nubank
-      description: "Silver model for Nubank statements"
-      columns:
-      - name: source_id
-        description: "Unique identifier for the source"
-        data_type: integer
-        constraints:
-          - type: not_null
-      - name: bank_name
-        description: "Name of the bank"
-        data_type: string
-        constraints:
-        - type: not_null
-      - name: source_type
-        description: "Type of the source"
-        data_type: string
-        constraints:
-        - type: not_null
-      - name: statement_account_id
-        description: "Account ID associated with the statement"
-        data_type: string
-        constraints:
-        - type: not_null
-      - name: statement_start_date
-        description: "Start date of the statement"
-        data_type: date
-        constraints:
-        - type: not_null
-      - name: statement_end_date
-        description: "End date of the statement"
-        data_type: date
-        constraints:
-        - type: not_null
-      - name: transaction_date
-        description: "Date of the transaction"
-        data_type: date
-        constraints:
-        - type: not_null
-      - name: type_id
-        description: "Type ID of the transaction"
-        data_type: integer
-        constraints:
-        - type: not_null
-      - name: transaction_type
-        description: "Type of the transaction"
-        data_type: string
-        constraints:
-        - type: not_null
-      - name: description_id
-        description: "Description ID of the transaction"
-        data_type: integer
-        constraints:
-        - type: not_null
-      - name: transaction_description
-        description: "Description of the transaction"
-        data_type: string
-        constraints:
-        - type: not_null
-      - name: place_id
-        description: "Place ID associated with the transaction"
-        data_type: integer
-        constraints:
-        - type: not_null
-      - name: category_id
-        description: "Category ID associated with the transaction"
-        data_type: integer
-        constraints:
-        - type: not_null
-      - name: coin_id
-        description: "Coin ID associated with the transaction"
-        data_type: integer
-        constraints:
-        - type: not_null
-      - name: coin_symbol
-        description: "Symbol of the coin"
-        data_type: string
-        constraints:
-        - type: not_null
-      - name: transaction_value
-        description: "Value of the transaction"
-        data_type: numeric
-        constraints:
-        - type: not_null
-      
-    - name: slv_statements_nubank_regex_mapping
-      description: "Silver model for Nubank statements regex mapping"
-      constraints:
-        - type: primary_key
-          warn_unenforced: false
-          columns: [regex_id]
-      columns:
-        - name: regex_id
-          description: "Unique identifier for the regex pattern"
-          data_type: integer
-          constraints:
-            - type: not_null
-          data_tests:
-            - unique
-        - name: regex_pattern
-          description: "Regular expression pattern to identify transactions"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: place_id
-          description: "Place ID associated with the transaction"
-          data_type: integer
-          constraints:
-            - type: not_null
-        - name: transaction_type
-          description: "Type of transaction"
-          data_type: integer
-        - name: description
-          description: "Description of the transaction"
-          data_type: string
-          constraints:
-            - type: not_null
-        - name: active
-          description: "Indicates if the pattern is active"
-          data_type: boolean
-          constraints:
-            - type: not_null
-        - name: priority
-          description: "Priority of the pattern"
-          data_type: integer
-        - name: inserted_at
-          description: "Timestamp when the record was inserted"
-          data_type: datetime
-          constraints:
-            - type: not_null
-        - name: updated_at
-          description: "Timestamp when the record was last updated"
-          data_type: datetime
-          constraints:
-            - type: not_null
-
-    # TODO: Fill this model
-    - name: slv_statements_inter
-      description: "Silver model for Inter bank statements"
+    - name: slv_description_patterns
+      description: "Table containing regex patterns for transaction descriptions"
       constraints:
       - type: primary_key
         warn_unenforced: false
-        columns: [source_id]
+        columns: [regex_id]
       columns:
-      - name: source_id
-        description: "Unique identifier for the source"
+      - name: regex_id
+        description: "Unique identifier for the regex pattern"
+        data_type: string
+        constraints:
+          - type: not_null
+        data_tests:
+          - unique
+      - name: regex_pattern
+        description: "Regular expression pattern to identify transactions"
+        data_type: string
+        constraints:
+          - type: not_null
+      - name: place_id
+        description: "ID of the place associated with the transaction"
         data_type: integer
         constraints:
-        - type: not_null
-      - name: bank_name
-        description: "Name of the bank"
-        data_type: string
-        constraints:
-        - type: not_null
-      - name: source_type
-        description: "Type of the source"
-        data_type: string
-        constraints:
-        - type: not_null
-      - name: statement_account_id
-        description: "Account ID associated with the statement"
-        data_type: string
-        constraints:
-        - type: not_null
-      - name: statement_start_date
-        description: "Start date of the statement"
-        data_type: date
-        constraints:
-        - type: not_null
-      - name: statement_end_date
-        description: "End date of the statement"
-        data_type: date
-        constraints:
-        - type: not_null
-      - name: transaction_date
-        description: "Date of the transaction"
-        data_type: date
-        constraints:
-        - type: not_null
-      - name: type_id
-        description: "Type ID of the transaction"
-        data_type: integer
-        constraints:
-        - type: not_null
-      - name: transaction_type
-        description: "Type of the transaction"
-        data_type: string
-        constraints:
-        - type: not_null
-      - name: description_id
-        description: "Description ID of the transaction"
-        data_type: integer
-        constraints:
-        - type: not_null
-      - name: transaction_description
+          - type: not_null
+      - name: description
         description: "Description of the transaction"
         data_type: string
-        constraints:
-        - type: not_null
-      - name: place_id
-        description: "Place ID associated with the transaction"
+      - name: priority
+        description: "Priority of the regex pattern"
         data_type: integer
         constraints:
-        - type: not_null
-      - name: category_id
-        description: "Category ID associated with the transaction"
-        data_type: integer
+          - type: not_null
+      - name: inserted_at
+        description: "Timestamp when the record was inserted"
+        data_type: datetime
         constraints:
-        - type: not_null
-      - name: coin_id
-        description: "Coin ID associated with the transaction"
-        data_type: integer
+          - type: not_null
+      - name: updated_at
+        description: "Timestamp when the record was last updated"
+        data_type: datetime
         constraints:
-        - type: not_null
-      - name: coin_symbol
-        description: "Symbol of the coin"
-        data_type: string
-        constraints:
-        - type: not_null
-      - name: transaction_value
-        description: "Value of the transaction"
-        data_type: numeric
-        constraints:
-        - type: not_null
+          - type: not_null
+
+    - name: slv_description_matches
+      # TODO: Add test to check if there is repetition of transaction_id
+      description: "Silver model for matching transaction descriptions with regex patterns"
+      # constraints:
+        # - type: primary_key
+        #  warn_unenforced: false
+        #  columns: [transaction_id, regex_id]
+        
+      columns:
+        - name: transaction_id
+          description: "Unique identifier for the transaction"
+          data_type: integer
+          constraints:
+            - type: not_null
+        - name: regex_id
+          description: "Unique identifier for the regex pattern"
+          data_type: string
+          constraints:
+            - type: not_null
+        - name: inserted_at
+          description: "Timestamp when the record was inserted"
+          data_type: datetime
+          constraints:
+            - type: not_null
+
       
     
-    - name: slv_statements_inter_regex_mapping
-      description: "Silver model for Inter bank statements regex mapping"
+
+    
+    - name: slv_fact_transactions
+      description: "Transaction fact table on silver layer"
       constraints:
         - type: primary_key
           warn_unenforced: false
-          columns: [regex_id]
+          columns: [transaction_id]
       columns:
-        - name: regex_id
-          description: "Unique identifier for the regex pattern"
+        - name: transaction_id
+          description: "Unique identifier for the transaction"
           data_type: integer
           constraints:
             - type: not_null
           data_tests:
             - unique
-        - name: regex_pattern
-          description: "Regular expression pattern to identify transactions"
-          data_type: string
+        - name: transaction_date
+          description: "Date of the transaction"
+          data_type: date
+          constraints:
+            - type: not_null
+        - name: source_id
+          description: "Source ID associated with the transaction"
+          data_type: integer
+          constraints:
+            - type: not_null
+        - name: description_id
+          description: "Description ID associated with the transaction"
+          data_type: integer
           constraints:
             - type: not_null
         - name: place_id
@@ -797,22 +364,26 @@ models:
           data_type: integer
           constraints:
             - type: not_null
-        - name: transaction_type
-          description: "Type of transaction"
+        - name: type_id
+          description: "Type ID associated with the transaction"
           data_type: integer
-        - name: description
-          description: "Description of the transaction"
-          data_type: string
           constraints:
             - type: not_null
-        - name: active
-          description: "Indicates if the pattern is active"
-          data_type: boolean
+        - name: category_id
+          description: "Category ID associated with the transaction"
+          data_type: integer
           constraints:
             - type: not_null
-        - name: priority
-          description: "Priority of the pattern"
+        - name: coin_id
+          description: "Coin ID associated with the transaction"
           data_type: integer
+          constraints:
+            - type: not_null
+        - name: amount
+          description: "Amount of the transaction"
+          data_type: numeric
+          constraints:
+            - type: not_null
         - name: inserted_at
           description: "Timestamp when the record was inserted"
           data_type: datetime
@@ -823,7 +394,8 @@ models:
           data_type: datetime
           constraints:
             - type: not_null
-
+    
+    
     - name: source_dimension
       description: "Dimension table for sources"
       constraints:

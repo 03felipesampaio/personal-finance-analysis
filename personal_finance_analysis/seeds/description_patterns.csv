@@ -1,0 +1,99 @@
+regex_id,regex_pattern,place,description,priority
+uber_1,Uber\b,Uber,Purchases at Uber,1
+99_app_1,99(\* Pop|[Aa]pp),99Taxis,Rides with 99 App,1
+amazon_1,Amazon(\b|-|\.),Amazon,Purchases at Amazon,1
+aliexpress_1,Aliexpress|Alipay,Aliexpress,Purchases at Aliexpress,1
+ifood_1,Ifood|Ifd,Ifood,Purchases at Ifood,1
+nubank_1,Nubank,Nubank,Payments to Nubank,1
+gol_1,Gol\b,Gol,Flights with Gol,1
+azul_1,Azul\b,Azul,Flights with Azul,1
+latam_1,Latam\b,Latam,Flights with Latam,1
+clickbus_1,Click[bB]us|BUS SERVICOS DE AGENDAMENTO SA,Clickbus,Purchases at Clickbus,1
+jau_serve_1,(?i:Jau Serve (Loja|Lj)),Jau Serve,Purchases at Jau Serve supermarket,1
+hbo_max_1,Hbomaxassin,HBO Max,Payments to HBO Max,1
+youtube_1,Google Youtub,Youtube,Payments to Youtube,1
+amazon_prime_1,Amazonprimebr,Amazon Prime,Signature at Amazon Prime,1
+microsoft_gamepass_1,Microsoft\*Subscription,Microsoft Gamepass,Payments to Microsoft Gamepass,1
+mercado_livre_plus_1,Melimais,Mercado Livre Plus,Purchases at Mercado Livre,1
+mercado_livre_plus_2,Nivel6,Mercado Livre Plus,Purchases at Mercado Livre,1
+totalpass_1,Totalpass,TotalPass,Payments to Total Pass,1
+clube_wine_1,Clubew|ClubeWine,Clube Wine,Purchases at Clube Wine,1
+imobiliaria_portal_1,PORTAL IMOVEIS,Imobiliaria Portal,Purchases at Imobiliaria Portal,1
+imobiliaria_portal_2,ESSIO GATTI JUNIOR,Imobiliaria Portal,Purchases at Imobiliaria Portal,1
+cpfl_1,CPFL PAULISTA|COMPANHIA PAULISTA DE FORCA E LUZ,CPFL,Payments to CPFL,1
+consultoria_futuro_1,Futuro Gestao Fina,Consultoria Futuro,Purchases at Consultoria Futuro,1
+lanchonete_serasa_1,(?i:Serasa Lanch),Restaurante Serasa,Purchases at Restaurante Serasa,1
+tempero_arte_1,(?i:HIDEO KAWAKANI)( SAO CARLOS BRA)?,Restaurante Tempero Arte,Purchases at Tempero Arte,1
+injoy_burguer_1,(?i:Injoyburguer|Injoyburger),Injoy Burguer,Purchases at Injoy Burguer,1
+injoy_burguer_2,Vilapotenza,Injoy Burguer,Burguer,1
+avalanche_1,Avalanche - Loja,Lanchonete Avalanche,Payments to Avalanche,1
+kamzu_,(?i:Kamzu),Kamzu,Purchases at Kamzu,1
+savegnago_1,Savegnago,Savegnago,Purchases at Savegnago,1
+ritorno_1,Ritorno,Pizzaria Ritorno,Purchases at Ritorno,1
+hering_1,Hering,Hering,Purchases at Hering,1
+shopee_1,Shopee,Shopee,Purchases at Shopee,1
+extra_1,Extra Com,Extra,Purchases at Extra,1
+montecarlo_1,Montecarlo,Monte Carlo,Purchases at Monte Carlo,1
+magalu_1,Magazineluiza,Magazine Luiza,Purchases at Magazine Luiza,1
+123_milhas_1,123 Viagens e Turismo,123 Milhas,Purchases at 123 Milhas,1
+acai_no_peso_1,Edi do Acai No Peso,Acai No Peso,Purchases at Acai No Peso,1
+alta_horas_1,Alta Horas,Alta Horas,Purchases at Alta Horas,1
+atelier_ana_celia_1,(?i:ATELIER ANA CELIA),Atelier Ana Celia,Atelie,1
+banana_brasil_eventos_1,Banana Brasil Eventos,Banana Brasil Eventos,Purchases at Banana Brasil Eventos,1
+banana_brasil_eventos_2,Bananatal,Banana Brasil Eventos,Payments to Bmg Bananatal,1
+banana_cafe_bar_1,(?i:Banana Cafe Bar),Banana Cafe Bar,Banana Cafe Bar,1
+bar_do_dalmir_1,(?i:Bar do Dalmir),Bar do Dalmir,Bar do Dalmir,1
+bar_do_teodoro_1,Bardoteodoro,Bar do Teodoro,Payments to Bardo Teodoro,1
+beco_da_torta_1,(?i:BECO DA TORTA),Beco da Torta,Beco da Torta,1
+bobs_1,\bBobs\b,Bobs,Purchases at Bobs,1
+byma_1,Byma\b,Byma,Purchases at Byma,1
+carrefour_1,Carrefour,Carrefour,Purchases at Carrefour,1
+centauro_1,Centauro,Centauro,Purchases at Centauro,1
+chiquinho_sorvetes_1,Chiquinho Sorvetes,Chiquinho Sorvetes,Purchases at Chiquinho Sorvetes,1
+code_brincos_1,Code Brincos,Code Brincos,Purchases at Code Brincos,1
+digital_ocean_1,Digitalocean,Digital Ocean,Payments to Digital Ocean,1
+divino_fogao_1,Divinofugao,Divino Fogao,Purchases at Divino Fogao,1
+drogaria_raia_1,\bRaia\b,Drogaria Raia,Purchases at Drogaria Raia,1
+drogasil_1,Drogasil,Drogasil,Purchases at Drogasil,1
+edestinos_1,Edestinos,Edestinos,Purchases at Edestinos,1
+empresa_cruz_1,Empresa Cruz,Empresa Cruz,Payments to Empresa Cruz,1
+escola_de_artes_manuais_1,Portaleam|Portal Eam,Escola de Artes Manuais,Payments to Escola de Artes Manuais,1
+farmacia_nossa_senhora_1,Farmacia Nossa Senhora,Farmacia Nossa Senhora,Purchases at Farmacia Nossa Senhora,1
+farmacia_rosario_1,(?i:Farmacia Rosar),Farmacia Rosario,Farmacia Rosario,1
+forest_app_1,Google Forest App,Forest App,Purchases at Forest App,1
+gauchao_lanches_1,Gauch(a?o) Lanches,Gauchao Lanches,Purchases at Gaucho Lanches,1
+google_apps_1,Google(ellatio| Ellatio| Wallet),Google Apps,Payments to Google Apps,1
+hiperideal_1,Hiperideal,Hiperideal,Purchases at Hiperideal,1
+hotels.com_1,Hotelscom,Hotels.com,Purchases at Hotels.com,1
+ingresso.com_1,Ingresse|Ingresso\.com,Ingresso.com,Purchases at Ingresse.com,1
+insider_1,Insiderstore,Insider,Purchases at Insider,1
+inter_1,(?i:Seg Cart Stda Liberty),Inter,Seguro Cartao Inter,1
+inter_shop_1,(?i:Shop(ping)? Inter),Inter Shop,Inter Shop,1
+jau_serve_loja_1,Jau Serve Loja,Jau Serve Loja,Purchases at Jau Serve supermarket,1
+kalunga_1,Kalunga,Kalunga,Purchases at Kalunga,1
+la_petitosa_1,la Petitosa,la Petitosa,Purchases at la Petitosa,1
+lancheria_lanche_pao_1,Lancheria Lanche Pao,Lancheria Lanche Pao,Purchases at Lancheria Lanche Pao,1
+lanchonete_serasas_1,Grsa Serasa Lanch,Lanchonete Serasas,Purchases at Lanchonete Serasas,1
+livraria_leitura_1,Livrarialeitura,Livraria Leitura,Purchases at Livraria Leitura,1
+long_neck_1,Stelo\*Long Neck,Long Neck,Purchases at Stelo Long Neck,1
+netshoes_1,Netshoes,Netshoes,Purchases at Netshoes,1
+nike_1,Nike,Nike,Purchases at Nike,1
+oficina_da_barba_1,Oficinadabarba,Oficina da Barba,Oficina da Barba,1
+paraiso_da_leitura_1,Paraiso da Leitura,Paraiso da Leitura,Purchases at Paraiso da Leitura,1
+perini_1,Perini Comercial,Perini,Purchases at Perini,1
+pista_2002_1,Pista 2002,Pista 2002,Pista 2002,1
+pizzaria_emmily_1,Pizzaria Emmily,Pizzaria Emmily,Purchases at Pizzaria Emmily,1
+pizzaria_lucchiari_1,Pizzaria Lucchiari,Pizzaria Lucchiari,Purchases at Pizzaria Lucchiari,1
+pizzaria_napoles_1,(?i:NAPOLESPIZZA),Pizzaria Napoles,Pizzaria Napoles,1
+porto_do_pao_1,Portodopao,Porto do Pao,Payments to Porto do Pao,1
+rancho_do_cupim_1,Rancho do Cupim,Rancho do Cupim,Purchases at Rancho do Cupim,1
+rappi_1,Rappi,Rappi,Purchases at Rappi,1
+renner_1,(?i:Renner),Renner,Renner,1
+riachuelo_1,(?i:Riachuelo),Riachuelo,Riachuelo,1
+shoptime_1,Shoptime,Shoptime,Purchases at Shoptime,1
+sony_plastaytion_1,Sonyplaystatn,Sony Plastaytion,Purchases at Sony Plastaytion,1
+submarino_1,Submarino,Submarino,Purchases at Submarino,1
+swarovski_1,Swarovski,Swarovski,Purchases at Swarovski,1
+ticketmaster_1,Ticketmaster,Ticketmaster,Ticketmaster,1
+tim_1,Recargatim,Tim,Payments to Tim,1
+travel_ace_1,Travel Ace,Travel Ace,Purchases at Travel Ace,1
