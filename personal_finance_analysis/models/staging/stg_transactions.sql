@@ -1,4 +1,4 @@
-{{ config(
+{# {{ config(
     materialized='table'
 ) }}
 
@@ -20,10 +20,12 @@ with bills_nubank as (
 
 
   from {{ ref('stg_bills__nubank') }} as bill
-  left join {{ ref('slv_bills_nubank_regex_mapping') }} as mapping_nubank_regex_bills
+  left join {{ ref('slv_bills_nubank_regex_mapping') }} 
+    as mapping_nubank_regex_bills
     on regexp_contains(transaction_description, regex_pattern)
       and mapping_nubank_regex_bills.active = true
 ),
+
 bills_inter as (
   select 
     bill.bank_name,
@@ -42,10 +44,12 @@ bills_inter as (
 
 
   from {{ ref('stg_bills_inter') }} as bill
-  left join {{ ref('slv_bills_inter_regex_mapping') }} as mapping_inter_regex_bills
+  left join {{ ref('slv_bills_inter_regex_mapping') }} 
+    as mapping_inter_regex_bills
     on regexp_contains(transaction_description, regex_pattern)
       and mapping_inter_regex_bills.active = true
 ),
+
 statements_nubank as (
   select 
     bank_name,
@@ -69,6 +73,7 @@ statements_nubank as (
     on regexp_contains(transaction_description, regex_pattern)
       and mapping_nubank_regex_statement.active = true
 ),
+
 statements_inter as (
   select 
     bank_name,
@@ -92,6 +97,7 @@ statements_inter as (
     on regexp_contains(transaction_description, regex_pattern)
       and mapping_inter_regex_statement.active = true
 ),
+
 transactions_without_dimensions_and_fact_ids as (
   select * from bills_nubank
   union all
@@ -101,6 +107,7 @@ transactions_without_dimensions_and_fact_ids as (
   union all
   select * from statements_nubank
 ),
+
 transactions_without_fact_ids as (
   select
     abs(farm_fingerprint(
@@ -122,11 +129,13 @@ transactions_without_fact_ids as (
         on place_dimension.place_id = 
           transactions_without_dimensions_and_fact_ids.place_id
     join {{ ref('coin_dimension') }} as coin_dimension on coin_dimension.coin_code = 'BRL'
-),
-transactions as (
+), #}
+
+{# transactions as (
   select
-    {{ generate_transaction_id('transaction_date', 'source_id', 'description_id', 'amount') }} as transaction_id,
+    {{ generate_transaction_id('transaction_date', 'source_id', 'description_id', 'amount') }} 
+      as transaction_id,
     *
   from transactions_without_fact_ids
 )
-select * from transactions
+select * from transactions #}

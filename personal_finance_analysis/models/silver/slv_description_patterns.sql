@@ -8,14 +8,14 @@ with stg as (
     select
         patterns.regex_id,
         patterns.regex_pattern,
-        place.place_id,
         patterns.description,
         patterns.priority,
+        coalesce(place.place_id, -1) as place_id,
 
         current_datetime() as inserted_at,
         current_datetime() as updated_at
     from {{ ref('stg_description_patterns') }} as patterns
-    inner join {{ ref('place_dimension') }} as place
+    left join {{ ref('slv_dim_places') }} as place
         on patterns.place = place.place
 )
 

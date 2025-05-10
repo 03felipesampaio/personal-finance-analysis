@@ -6,8 +6,8 @@ with source as (
         tr.place_id,
         tr.category_id,
         tr.type_id
-    from {{ ref('transactions') }} as tr
-    inner join {{ ref('source_dimension') }} as sr
+    from {{ ref('slv_fact_transactions') }} as tr
+    inner join {{ ref('slv_dim_sources') }} as sr
         on tr.source_id = sr.source_id
     {# join {{ ref('source_dimension') }} as sr on tr.source_id = sr.source_id
     join {{ ref('place_dimension') }} as pl on tr.place_id = pl.place_id

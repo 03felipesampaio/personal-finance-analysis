@@ -54,13 +54,13 @@ transactions_with_ids as (
     from transactions as t
     left join patterns as patterns
         on patterns.transaction_id = t.transaction_id
-    left join {{ ref('coin_dimension') }} as coin_dimension
+    left join {{ ref('slv_dim_coins') }} as coin_dimension
         on t.coin_code = coin_dimension.coin_code
-    left join {{ ref('type_dimension') }} as type_dimension
+    left join {{ ref('slv_dim_types') }} as type_dimension
         on t.transaction_type = type_dimension.type_description
-    left join {{ ref('place_dimension') }} as place_dimension
+    left join {{ ref('slv_dim_places') }} as place_dimension
         on patterns.place_id = place_dimension.place_id
-    left join {{ ref('category_dimension') }} as category_dimension
+    left join {{ ref('slv_dim_categories') }} as category_dimension
         on place_dimension.category_id = category_dimension.category_id
 )
 
