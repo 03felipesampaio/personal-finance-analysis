@@ -38,7 +38,7 @@ place_id,place,is_online,category
 35,Carrefour,Physical,Groceries
 36,Futuro Gestao Financeira,Online,Finance
 37,Atelier Ana Celia,Physical,Clothing
-38,TotalPass,Online,Gym and Fitness
+38,TotalPass,Online,Sports & Fitness
 39,Microsoft Gamepass,Online,Subscriptions
 40,Mercado Livre Plus,Online,Subscriptions
 41,Clube Wine,Online,Subscriptions
@@ -52,3 +52,45 @@ place_id,place,is_online,category
 49,Kamzu,Physical,Restaurants
 50,Savegnago,Physical,Groceries
 51,Pizzaria Ritorno,Physical,Restaurants
+52,Monte Carlo,Online,Jewelry
+53,Magazine Luiza,Online,E-commerce
+54,Acai No Peso,Physical,Restaurants
+55,Alta Horas,Physical,Restaurants
+56,Banana Cafe Bar,Physical,Restaurants
+57,Bar do Dalmir,Physical,Restaurants
+58,Bar do Teodoro,Physical,Restaurants
+59,Beco da Torta,Physical,Restaurants
+60,Byma,Physical,Parties and Events
+61,Chiquinho Sorvetes,Physical,Restaurants
+62,Code Brincos,Physical,Haircuts & Beauty
+63,Digital Ocean,Online,Technology
+64,Divino Fogao,Physical,Restaurants
+65,Drogaria Raia,Physical,Medications
+66,Drogasil,Physical,Medications
+67,Edestinos,Online,Travel & Vacations
+68,Farmacia Nossa Senhora,Physical,Medications
+69,Farmacia Rosario,Physical,Medications
+70,Forest App,Online,Technology
+71,Hiperideal,Physical,Groceries
+72,Inter,Online,Finance
+73,Inter Shop,Online,E-commerce
+74,La Petitosa,Physical,Restaurants
+75,Livraria Leitura,Physical,Books & Supplies
+76,Netshoes,Online,Clothing
+77,Oficina da Barba,Physical,Haircuts & Beauty
+78,Paraiso da Leitura,Physical,Education
+79,Perini,Physical,Restaurants
+80,Pista 2002,Physical,Parties and Events
+81,Pizzaria Emmily,Physical,Restaurants
+82,Pizzaria Napoles,Physical,Restaurants
+83,Porto do Pao,Physical,Restaurants
+84,Rancho do Cupim,Physical,Restaurants
+85,Rappi,Online,Delivery Services
+86,Renner,Physical,Clothing
+87,Riachuelo,Physical,Clothing
+88,Shoptime,Online,E-commerce
+89,Submarino,Online,E-commerce
+90,Swarovski,Physical,Jewelry
+91,Ticketmaster,Online,Parties and Events
+92,Tim,Online,Utilities
+93,Travel Ace,Online,Travel & Vacations
