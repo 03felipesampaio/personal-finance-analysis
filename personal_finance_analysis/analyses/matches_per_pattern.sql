@@ -29,4 +29,4 @@ select
 from patterns
 left join matches
     on patterns.regex_id = matches.regex_id
-order by number_of_matches asc
+order by number_of_matches asc -- noqa: RF01
