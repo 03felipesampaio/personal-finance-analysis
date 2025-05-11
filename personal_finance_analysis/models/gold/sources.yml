@@ -6,6 +6,7 @@ models:
     constraints:
       - type: primary_key
         columns: [category_id]
+        warn_unenforced: false
     columns:
       - name: category_id
         description: "Unique identifier for the category"
@@ -48,6 +49,7 @@ models:
     constraints:
       - type: primary_key
         columns: [coin_id]
+        warn_unenforced: false
     columns:
       - name: coin_id
         description: "Unique identifier for the coin"
@@ -100,6 +102,7 @@ models:
     constraints:
       - type: primary_key
         columns: [date_full]
+        warn_unenforced: false
     columns:
       - name: date_full
         description: "Full date"
@@ -157,6 +160,7 @@ models:
     constraints:
       - type: primary_key
         columns: [description_id]
+        warn_unenforced: false
     columns:
       - name: description_id
         description: "Unique identifier for the description"
@@ -184,6 +188,11 @@ models:
     constraints:
       - type: primary_key
         columns: [place_id]
+        warn_unenforced: false
+      - type: foreign_key
+        columns: [category_id]
+        references: {table: dim_categories, column: category_id}
+        warn_unenforced: false
     columns:
       - name: place_id
         description: "Unique identifier for the place"
@@ -221,6 +230,7 @@ models:
     constraints:
       - type: primary_key
         columns: [source_id]
+        warn_unenforced: false
     columns:
       - name: source_id
         description: "Unique identifier for the source"
@@ -240,8 +250,6 @@ models:
       - name: source_account
         description: "Source account"
         data_type: string
-        constraints:
-          - type: not_null
       - name: source_start
         description: "Start date of the source"
         data_type: date
@@ -255,19 +263,16 @@ models:
       - name: bill_date
         description: "Bill date"
         data_type: date
-        constraints:
-          - type: not_null
       - name: bill_amount
         description: "Bill amount"
         data_type: decimal
-        constraints:
-          - type: not_null
 
   - name: dim_transaction_types
     description: "Dimension table for transaction types"
     constraints:
       - type: primary_key
         columns: [type_id]
+        warn_unenforced: false
     columns:
       - name: type_id
         description: "Unique identifier for the transaction type"
@@ -300,6 +305,31 @@ models:
     constraints:
       - type: primary_key
         columns: [transaction_id]
+        warn_unenforced: false
+      - type: foreign_key
+        columns: [source_id]
+        references: {table: dim_sources, column: source_id}
+        warn_unenforced: false
+      - type: foreign_key
+        columns: [description_id]
+        references: {table: dim_descriptions, column: description_id}
+        warn_unenforced: false
+      - type: foreign_key
+        columns: [place_id]
+        references: {table: dim_places, column: place_id}
+        warn_unenforced: false
+      - type: foreign_key
+        columns: [type_id]
+        references: {table: dim_transaction_types, column: type_id}
+        warn_unenforced: false
+      - type: foreign_key
+        columns: [category_id]
+        references: {table: dim_categories, column: category_id}
+        warn_unenforced: false
+      - type: foreign_key
+        columns: [coin_id]
+        references: {table: dim_coins, column: coin_id}
+        warn_unenforced: false
     columns:
       - name: transaction_id
         description: "Unique identifier for the transaction"
@@ -346,15 +376,6 @@ models:
         data_type: decimal
         constraints:
           - type: not_null
-      # - name: income_or_expense
-      #   description: "Indicates if the transaction is an income or expense"
-      #   data_type: string
-      # - name: amount_abs
-      #   description: "Absolute amount of the transaction"
-      #   data_type: decimal
-      # - name: daily_cumulative_balance
-      #   description: "Cumulative balance for the day"
-      #   data_type: decimal
 
   - name: gold_places_rank
     description: "Rank of places based on expenditure"
