@@ -109,6 +109,11 @@ models:
         data_type: date
         constraints:
           - type: not_null
+      - name: year_month
+        description: "Year and month"
+        data_type: string
+        constraints:
+          - type: not_null
       - name: year
         description: "Year"
         data_type: integer
@@ -191,7 +196,8 @@ models:
         warn_unenforced: false
       - type: foreign_key
         columns: [category_id]
-        references: {table: dim_categories, column: category_id}
+        to: ref('dim_categories')
+        to_columns: [category_id]
         warn_unenforced: false
     columns:
       - name: place_id
@@ -307,28 +313,39 @@ models:
         columns: [transaction_id]
         warn_unenforced: false
       - type: foreign_key
+        columns: [transaction_date]
+        to: ref('dim_dates')
+        to_columns: [date_full]
+        warn_unenforced: false
+      - type: foreign_key
         columns: [source_id]
-        references: {table: dim_sources, column: source_id}
+        to: ref('dim_sources')
+        to_columns: [source_id]
         warn_unenforced: false
       - type: foreign_key
         columns: [description_id]
-        references: {table: dim_descriptions, column: description_id}
+        to: ref('dim_descriptions')
+        to_columns: [description_id]
         warn_unenforced: false
       - type: foreign_key
         columns: [place_id]
-        references: {table: dim_places, column: place_id}
+        to: ref('dim_places')
+        to_columns: [place_id]
         warn_unenforced: false
       - type: foreign_key
         columns: [type_id]
-        references: {table: dim_transaction_types, column: type_id}
+        to: ref('dim_transaction_types')
+        to_columns: [type_id]
         warn_unenforced: false
       - type: foreign_key
         columns: [category_id]
-        references: {table: dim_categories, column: category_id}
+        to: ref('dim_categories')
+        to_columns: [category_id]
         warn_unenforced: false
       - type: foreign_key
         columns: [coin_id]
-        references: {table: dim_coins, column: coin_id}
+        to: ref('dim_coins')
+        to_columns: [coin_id]
         warn_unenforced: false
     columns:
       - name: transaction_id

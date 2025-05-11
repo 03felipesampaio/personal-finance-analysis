@@ -1,14 +1,15 @@
 WITH date_table AS (
     SELECT
-        day AS date_full,
-        EXTRACT(YEAR FROM day) AS year,
-        EXTRACT(MONTH FROM day) AS month_number,
-        FORMAT_TIMESTAMP('%B', TIMESTAMP(day)) AS month,
-        EXTRACT(QUARTER FROM day) AS quarter_number,
-        CONCAT('Q', EXTRACT(QUARTER FROM day)) AS year_quarter,
-        EXTRACT(DAY FROM day) AS day,
-        EXTRACT(DAYOFWEEK FROM day) AS day_of_week_number,
-        CASE EXTRACT(DAYOFWEEK FROM day)
+        dt AS date_full,
+        FORMAT_DATE('%Y-%m', dt) AS year_month,
+        EXTRACT(YEAR FROM dt) AS year,
+        EXTRACT(MONTH FROM dt) AS month_number,
+        FORMAT_TIMESTAMP('%B', TIMESTAMP(dt)) AS month,
+        EXTRACT(QUARTER FROM dt) AS quarter_number,
+        CONCAT('Q', EXTRACT(QUARTER FROM dt)) AS year_quarter,
+        EXTRACT(DAY FROM dt) AS day,
+        EXTRACT(DAYOFWEEK FROM dt) AS day_of_week_number,
+        CASE EXTRACT(DAYOFWEEK FROM dt)
             WHEN 1 THEN 'Sunday'
             WHEN 2 THEN 'Monday'
             WHEN 3 THEN 'Tuesday'
@@ -17,7 +18,7 @@ WITH date_table AS (
             WHEN 6 THEN 'Friday'
             WHEN 7 THEN 'Saturday'
         END AS day_name_en,
-        CASE EXTRACT(DAYOFWEEK FROM day)
+        CASE EXTRACT(DAYOFWEEK FROM dt)
             WHEN 1 THEN 'Domingo'
             WHEN 2 THEN 'Segunda'
             WHEN 3 THEN 'Terça'
@@ -26,13 +27,14 @@ WITH date_table AS (
             WHEN 6 THEN 'Sexta'
             WHEN 7 THEN 'Sábado'
         END AS day_name_pt,
-        EXTRACT(WEEK FROM day) AS week_number,
-        COALESCE(EXTRACT(DAYOFWEEK FROM day) IN (1, 7), FALSE) AS is_weekend
-    FROM UNNEST(GENERATE_DATE_ARRAY('2017-01-01', '2040-12-31')) AS day
+        EXTRACT(WEEK FROM dt) AS week_number,
+        COALESCE(EXTRACT(DAYOFWEEK FROM dt) IN (1, 7), FALSE) AS is_weekend
+    FROM UNNEST(GENERATE_DATE_ARRAY('2017-01-01', '2040-12-31')) AS dt
 )
 
 SELECT
     date_full,
+    year_month,
     year,
     year_quarter,
     month,

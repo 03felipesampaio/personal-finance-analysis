@@ -2,6 +2,7 @@ with
 source as (
     select
         date_full,
+        year_month,
         year,
         year_quarter,
         month,
