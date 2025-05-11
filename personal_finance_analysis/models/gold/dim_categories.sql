@@ -7,7 +7,7 @@ with source as (
         upper_category_pt,
         inserted_at,
         updated_at
-    from {{ ref('category_dimension') }}
+    from {{ ref('slv_dim_categories') }}
 )
 
 select * from source

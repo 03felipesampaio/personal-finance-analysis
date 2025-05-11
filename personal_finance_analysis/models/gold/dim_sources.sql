@@ -9,7 +9,7 @@ source as (
         source_end,
         bill_date,
         bill_amount
-    from {{ ref('source_dimension') }}
+    from {{ ref('slv_dim_sources') }}
 )
 
 select * from source

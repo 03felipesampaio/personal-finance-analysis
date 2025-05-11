@@ -9,11 +9,11 @@ source as (
         type_id,
         category_id,
         coin_id,
-        amount,
-        income_or_expense,
+        amount
+        {# income_or_expense,
         amount_abs,
-        daily_cumulative_balance
-    from {{ ref('transactions') }}
+        daily_cumulative_balance #}
+    from {{ ref('slv_fact_transactions') }}
 )
 
 select * from source

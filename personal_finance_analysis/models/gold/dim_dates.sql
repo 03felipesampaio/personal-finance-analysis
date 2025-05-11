@@ -11,7 +11,7 @@ source as (
         day_name_en,
         day_name_pt,
         is_weekend
-    from {{ ref('date_dimension') }}
+    from {{ ref('slv_dim_dates') }}
 )
 
 select * from source

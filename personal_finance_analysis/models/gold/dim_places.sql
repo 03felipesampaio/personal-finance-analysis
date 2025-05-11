@@ -6,7 +6,7 @@ with source as (
         places.category_id,
         places.inserted_at,
         places.updated_at
-    from {{ ref('place_dimension') }} as places
+    from {{ ref('slv_dim_places') }} as places
 )
 
 select * from source

@@ -5,7 +5,7 @@ with source as (
         type_description_pt,
         inserted_at,
         updated_at
-    from {{ ref("type_dimension") }}
+    from {{ ref("slv_dim_types") }}
 )
 
 select * from source

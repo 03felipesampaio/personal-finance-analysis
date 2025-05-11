@@ -9,7 +9,7 @@ with source as (
         decimal_separator,
         inserted_at,
         updated_at
-    from {{ ref("coin_dimension") }}
+    from {{ ref("slv_dim_coins") }}
 )
 
 select * from source
