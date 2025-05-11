@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: dim_category
+  - name: dim_categories
     description: "Dimension table for categories of transactions"
     constraints:
       - type: primary_key
@@ -10,26 +10,40 @@ models:
       - name: category_id
         description: "Unique identifier for the category"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: category
         description: "Name of the category"
         data_type: string
+        constraints:
+          - type: not_null
       - name: category_pt
         description: "Name of the category in Portuguese"
         data_type: string
+        constraints:
+          - type: not_null
       - name: upper_category
         description: "Upper level category"
         data_type: string
+        constraints:
+          - type: not_null
       - name: upper_category_pt
         description: "Upper level category in Portuguese"
         data_type: string
+        constraints:
+          - type: not_null
       - name: inserted_at
         description: "Timestamp when the record was inserted"
         data_type: datetime
+        constraints:
+          - type: not_null
       - name: updated_at
         description: "Timestamp when the record was last updated"
         data_type: datetime
+        constraints:
+          - type: not_null
 
-  - name: dim_coin
+  - name: dim_coins
     description: "Dimension table for coins"
     constraints:
       - type: primary_key
@@ -38,32 +52,50 @@ models:
       - name: coin_id
         description: "Unique identifier for the coin"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: coin_code
         description: "Code of the coin"
         data_type: string
+        constraints:
+          - type: not_null
       - name: coin_name
         description: "Name of the coin"
         data_type: string
+        constraints:
+          - type: not_null
       - name: coin_symbol
         description: "Symbol of the coin"
         data_type: string
+        constraints:
+          - type: not_null
       - name: coin_type
         description: "Type of the coin"
         data_type: string
+        constraints:
+          - type: not_null
       - name: thousands_separator
         description: "Thousands separator used for the coin"
         data_type: string
+        constraints:
+          - type: not_null
       - name: decimal_separator
         description: "Decimal separator used for the coin"
         data_type: string
+        constraints:
+          - type: not_null
       - name: inserted_at
         description: "Timestamp when the record was inserted"
         data_type: datetime
+        constraints:
+          - type: not_null
       - name: updated_at
         description: "Timestamp when the record was last updated"
         data_type: datetime
+        constraints:
+          - type: not_null
 
-  - name: dim_date
+  - name: dim_dates
     description: "Dimension table for dates"
     constraints:
       - type: primary_key
@@ -72,35 +104,55 @@ models:
       - name: date_full
         description: "Full date"
         data_type: date
+        constraints:
+          - type: not_null
       - name: year
         description: "Year"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: year_quarter
         description: "Quarter of the year"
         data_type: string
+        constraints:
+          - type: not_null
       - name: month
         description: "Month"
         data_type: string
+        constraints:
+          - type: not_null
       - name: month_number
         description: "Month number"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: week_number
         description: "Week number"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: day
         description: "Day of the month"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: day_name_en
         description: "Day name in English"
         data_type: string
+        constraints:
+          - type: not_null
       - name: day_name_pt
         description: "Day name in Portuguese"
         data_type: string
+        constraints:
+          - type: not_null
       - name: is_weekend
         description: "Indicates if the day is a weekend"
         data_type: boolean
+        constraints:
+          - type: not_null
 
-  - name: dim_description
+  - name: dim_descriptions
     description: "Dimension table for descriptions"
     constraints:
       - type: primary_key
@@ -109,17 +161,25 @@ models:
       - name: description_id
         description: "Unique identifier for the description"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: description
         description: "Description text"
         data_type: string
+        constraints:
+          - type: not_null
       - name: inserted_at
         description: "Timestamp when the record was inserted"
         data_type: datetime
+        constraints:
+          - type: not_null
       - name: updated_at
         description: "Timestamp when the record was last updated"
         data_type: datetime
+        constraints:
+          - type: not_null
 
-  - name: dim_place
+  - name: dim_places
     description: "Dimension table for places"
     constraints:
       - type: primary_key
@@ -128,23 +188,35 @@ models:
       - name: place_id
         description: "Unique identifier for the place"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: place
         description: "Name of the place"
         data_type: string
+        constraints:
+          - type: not_null
       - name: is_online
         description: "Indicates if the place is online"
         data_type: string
+        constraints:
+          - type: not_null
       - name: category_id
         description: "Category identifier"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: inserted_at
         description: "Timestamp when the record was inserted"
         data_type: datetime
+        constraints:
+          - type: not_null
       - name: updated_at
         description: "Timestamp when the record was last updated"
         data_type: datetime
+        constraints:
+          - type: not_null
 
-  - name: dim_source
+  - name: dim_sources
     description: "Dimension table for sources"
     constraints:
       - type: primary_key
@@ -153,29 +225,45 @@ models:
       - name: source_id
         description: "Unique identifier for the source"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: bank_name
         description: "Name of the bank"
         data_type: string
+        constraints:
+          - type: not_null
       - name: source_type
         description: "Type of the source"
         data_type: string
+        constraints:
+          - type: not_null
       - name: source_account
         description: "Source account"
         data_type: string
+        constraints:
+          - type: not_null
       - name: source_start
         description: "Start date of the source"
         data_type: date
+        constraints:
+          - type: not_null
       - name: source_end
         description: "End date of the source"
         data_type: date
+        constraints:
+          - type: not_null
       - name: bill_date
         description: "Bill date"
         data_type: date
+        constraints:
+          - type: not_null
       - name: bill_amount
         description: "Bill amount"
         data_type: decimal
+        constraints:
+          - type: not_null
 
-  - name: dim_transaction_type
+  - name: dim_transaction_types
     description: "Dimension table for transaction types"
     constraints:
       - type: primary_key
@@ -184,18 +272,28 @@ models:
       - name: type_id
         description: "Unique identifier for the transaction type"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: type_description
         description: "Description of the transaction type"
         data_type: string
+        constraints:
+          - type: not_null
       - name: type_description_pt
         description: "Description of the transaction type in Portuguese"
         data_type: string
+        constraints:
+          - type: not_null
       - name: inserted_at
         description: "Timestamp when the record was inserted"
         data_type: datetime
+        constraints:
+          - type: not_null
       - name: updated_at
         description: "Timestamp when the record was last updated"
         data_type: datetime
+        constraints:
+          - type: not_null
 
   - name: fact_transactions
     description: "Fact table for transactions"
@@ -206,39 +304,57 @@ models:
       - name: transaction_id
         description: "Unique identifier for the transaction"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: transaction_date
         description: "Date of the transaction"
         data_type: date
+        constraints:
+          - type: not_null
       - name: source_id
         description: "Identifier for the source"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: description_id
         description: "Identifier for the description"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: place_id
         description: "Identifier for the place"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: type_id
         description: "Identifier for the transaction type"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: category_id
         description: "Identifier for the category"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: coin_id
         description: "Identifier for the coin"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: amount
         description: "Amount of the transaction"
         data_type: decimal
-      - name: income_or_expense
-        description: "Indicates if the transaction is an income or expense"
-        data_type: string
-      - name: amount_abs
-        description: "Absolute amount of the transaction"
-        data_type: decimal
-      - name: daily_cumulative_balance
-        description: "Cumulative balance for the day"
-        data_type: decimal
+        constraints:
+          - type: not_null
+      # - name: income_or_expense
+      #   description: "Indicates if the transaction is an income or expense"
+      #   data_type: string
+      # - name: amount_abs
+      #   description: "Absolute amount of the transaction"
+      #   data_type: decimal
+      # - name: daily_cumulative_balance
+      #   description: "Cumulative balance for the day"
+      #   data_type: decimal
 
   - name: gold_places_rank
     description: "Rank of places based on expenditure"
@@ -246,12 +362,20 @@ models:
       - name: rank
         description: "Rank of the place"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: place
         description: "Name of the place"
         data_type: string
+        constraints:
+          - type: not_null
       - name: num_transactions
         description: "Number of transactions"
         data_type: integer
+        constraints:
+          - type: not_null
       - name: sum_transactions
         description: "Sum of transactions"
         data_type: decimal
+        constraints:
+          - type: not_null
